@@ -1,0 +1,12 @@
+node_modules
+.next
+# next-sitemap generates these into /public on every build
+public/sitemap.xml
+public/sitemap-0.xml
+out
+.env
+.env.local
+.vercel
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
