@@ -85,7 +85,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
           <span>Townsville, QLD, Australia · Australian English</span>
           <span>
-            Website created by{' '}
+            Website powered by{' '}
             <a
               href="https://metatapdigital.com"
               target="_blank"
