@@ -84,6 +84,17 @@ export function Footer() {
         <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-200/70 flex flex-wrap justify-between gap-2">
           <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
           <span>Townsville, QLD, Australia · Australian English</span>
+          <span>
+            Website created by{' '}
+            <a
+              href="https://metatapdigital.com"
+              target="_blank"
+              rel="noopener"
+              className="underline hover:text-hivis-400"
+            >
+              metatapdigital.com
+            </a>
+          </span>
         </div>
       </div>
     </footer>
