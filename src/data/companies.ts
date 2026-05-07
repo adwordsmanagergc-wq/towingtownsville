@@ -6,6 +6,7 @@ export const companies: TowingCompany[] = [
     name: 'ABC Towing Services',
     logoSrc: '/recommended/abc-towing.svg',
     websiteUrl: 'https://www.abcctowingservices.com/',
+    phone: '07 4775 5561',
     townsvilleBased: true,
     available247: true,
     services: [
