@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { Inter, Manrope } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MobileCallCta } from '@/components/MobileCallCta';
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <MobileCallCta />
+        <Analytics />
       </body>
     </html>
   );
