@@ -16,11 +16,11 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Tow Truck Townsville | Compare & Recommended Towing Companies',
   description:
-    "Need a tow truck in Townsville? Compare every type of towing service and see the two operators we recommend most for fast, insured, damage-free recoveries.",
+    "Towing Townsville guide — compare every Tow Truck Townsville service and see the two operators we recommend most for fast, insured recoveries.",
   path: '/',
   ogTitle: "Need a Tow Truck in Townsville? Here's Who to Call.",
   ogDescription:
-    "Independent comparison of Townsville's towing companies — accident, breakdown, heavy, 4WD recovery and more.",
+    "Towing Townsville & Tow Truck Townsville comparison — independent guide to accident, breakdown, heavy and 4WD recovery operators across NQ.",
 });
 
 export default function HomePage() {

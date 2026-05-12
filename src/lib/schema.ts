@@ -6,7 +6,7 @@ export const orgSchema = () => ({
   '@type': 'Organization',
   name: site.name,
   url: site.url,
-  logo: `${site.url}/og/default.svg`,
+  logo: `${site.url}/hero/towing-townsville.png`,
   areaServed: {
     '@type': 'AdministrativeArea',
     name: 'Townsville, Queensland',
