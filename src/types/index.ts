@@ -78,4 +78,7 @@ export type BlogPost = {
   author: string;
   readMinutes: number;
   body: string; // markdown
+  // Optional structured data for rich results.
+  faqs?: Faq[];
+  mechanics?: { position: number; name: string; description: string }[];
 };

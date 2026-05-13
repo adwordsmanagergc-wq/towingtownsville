@@ -3,7 +3,12 @@ import { notFound } from 'next/navigation';
 import { allBlogPosts, getBlogPost } from '@/data/blog';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { JsonLd } from '@/components/JsonLd';
-import { articleSchema, breadcrumbSchema } from '@/lib/schema';
+import {
+  articleSchema,
+  breadcrumbSchema,
+  faqSchema,
+  mechanicsItemListSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { renderMarkdown } from '@/lib/md';
 import { RecommendedCompaniesBlock } from '@/components/RecommendedCompaniesBlock';
@@ -39,6 +44,8 @@ export default function BlogPostPage({ params }: Params) {
         ])}
       />
       <JsonLd data={articleSchema(post)} />
+      {post.faqs && <JsonLd data={faqSchema(post.faqs)} />}
+      {post.mechanics && <JsonLd data={mechanicsItemListSchema(post.mechanics)} />}
 
       <section className="bg-navy-800 text-white">
         <div className="mx-auto max-w-3xl px-4 py-14 md:py-20">

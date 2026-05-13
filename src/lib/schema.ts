@@ -103,3 +103,22 @@ export const articleSchema = (post: BlogPost) => ({
   publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: `${site.url}/og/default.svg` } },
   mainEntityOfPage: `${site.url}/blog/${post.slug}`,
 });
+
+export const mechanicsItemListSchema = (
+  mechanics: { position: number; name: string; description: string }[],
+) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Top mechanics in Townsville',
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListElement: mechanics.map((m) => ({
+    '@type': 'ListItem',
+    position: m.position,
+    item: {
+      '@type': 'AutoRepair',
+      name: m.name,
+      description: m.description,
+      areaServed: 'Townsville, QLD',
+    },
+  })),
+});
