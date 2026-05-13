@@ -53,7 +53,7 @@ export async function sendContact(
   try {
     const resend = new Resend(apiKey);
     await resend.emails.send({
-      from: 'Townsville Towing Compare <noreply@townsvilletowingcompare.com.au>',
+      from: 'Townsville Towing Compare <noreply@towingtownsville.com>',
       to: owner,
       replyTo: email,
       subject: `New enquiry from ${name}`,

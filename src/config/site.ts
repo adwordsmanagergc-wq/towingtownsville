@@ -8,13 +8,13 @@ export const site = {
   tagline: 'Compare and find the best tow truck in Townsville',
   description:
     'Compare every type of tow service in Townsville and see the operators we recommend for fast, properly insured, damage-free recoveries.',
-  domain: 'townsvilletowingcompare.com.au',
+  domain: 'towingtownsville.com',
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-    'https://townsvilletowingcompare.com.au',
+    'https://towingtownsville.com',
   locale: 'en-AU',
   region: 'Townsville, QLD, Australia',
-  contactEmail: 'hello@townsvilletowingcompare.com.au',
+  contactEmail: 'hello@towingtownsville.com',
   defaultOgImage: '/og/default.svg',
   themeColor: '#0B1B2B',
   nav: [

@@ -41,7 +41,7 @@ pnpm dev       # http://localhost:3000
 
 Required env vars (see `.env.example`):
 
-- `NEXT_PUBLIC_SITE_URL` — your live origin, e.g. `https://townsvilletowingcompare.com.au`
+- `NEXT_PUBLIC_SITE_URL` — your live origin, e.g. `https://towingtownsville.com`
 - `NEXT_PUBLIC_GA_ID` — GA4 measurement ID, optional
 - `RESEND_API_KEY` — for the contact form, optional in dev (form soft-fails)
 - `OWNER_EMAIL` — destination address for contact-form emails
@@ -155,7 +155,7 @@ After scaffolding, the following are the human-actionable items remaining:
   (or replace the meta-tag pathway with a DNS verification).
 - [ ] Submit `/sitemap.xml` to Google Search Console after the domain is live.
 - [ ] Confirm the from-address used by the contact-form server action
-  (`noreply@townsvilletowingcompare.com.au`) is verified in Resend.
+  (`noreply@towingtownsville.com`) is verified in Resend.
 - [ ] Spot-check the comparison table on `/compare` once you have any updated operator
   details (response time, fleet, etc.) — edit `src/components/CompareTable.tsx` and
   `src/data/companies.ts`.
