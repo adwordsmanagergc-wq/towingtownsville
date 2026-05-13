@@ -21,13 +21,13 @@ export function Footer() {
             {services.slice(0, 8).map((s) => (
               <li key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="hover:text-hivis-400">
-                  {s.h1.replace(' in Townsville', '').replace(' from Townsville', '')}
+                  {s.h1}
                 </Link>
               </li>
             ))}
             <li>
               <Link href="/services" className="hover:text-hivis-400 underline">
-                See all services
+                All Townsville towing services
               </Link>
             </li>
           </ul>
@@ -44,7 +44,7 @@ export function Footer() {
             ))}
             <li>
               <Link href="/townsville" className="hover:text-hivis-400 underline">
-                All Townsville suburbs
+                Tow truck Townsville — all suburbs
               </Link>
             </li>
           </ul>

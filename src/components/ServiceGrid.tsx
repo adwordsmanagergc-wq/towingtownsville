@@ -108,7 +108,7 @@ export function ServiceGrid() {
         </ul>
         <div className="mt-8">
           <Link href="/services" className="text-sm font-semibold text-navy-800 underline">
-            See all tow services →
+            See all Townsville tow truck services →
           </Link>
         </div>
       </div>

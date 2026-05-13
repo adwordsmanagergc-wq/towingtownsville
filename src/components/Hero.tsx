@@ -34,7 +34,7 @@ export function Hero() {
                 href="/services"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-md border border-white/20 transition"
               >
-                Browse Tow Services <ArrowRight className="h-4 w-4" />
+                Browse Townsville Tow Truck Services <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <p className="mt-8 text-sm text-slate-200/80">

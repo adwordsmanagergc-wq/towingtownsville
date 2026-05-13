@@ -117,7 +117,7 @@ export const suburbs: Suburb[] = [
       'Prestige and luxury vehicle tows where damage-free loading matters',
       'After-school carpark callouts at local shopping precincts',
     ],
-    neighbouring: ['oonoonba', 'hermit-park', 'aitkenvale', 'south-townsville'].filter((s) => s !== 'south-townsville'),
+    neighbouring: ['oonoonba', 'hermit-park', 'aitkenvale', 'mount-louisa'],
     faqs: [
       {
         q: 'Can a prestige SUV be towed without panel damage?',

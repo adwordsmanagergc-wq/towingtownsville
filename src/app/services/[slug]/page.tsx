@@ -105,7 +105,7 @@ export default function ServicePage({ params }: Params) {
             {related.length > 0 && (
               <div>
                 <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">
-                  Related tow services in Townsville
+                  Related Townsville towing services
                 </h2>
                 <ul className="space-y-2">
                   {related.map((r) => (
@@ -124,7 +124,7 @@ export default function ServicePage({ params }: Params) {
             {nearbySuburbs.length > 0 && (
               <div>
                 <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">
-                  Townsville suburbs we cover
+                  Tow truck Townsville — suburbs we cover
                 </h2>
                 <ul className="grid grid-cols-2 gap-2">
                   {nearbySuburbs.map((su) => (
@@ -133,7 +133,7 @@ export default function ServicePage({ params }: Params) {
                         href={`/townsville/${su.slug}`}
                         className="text-navy-800 hover:text-hivis-600 underline underline-offset-4"
                       >
-                        {su.name}
+                        Tow truck {su.name}
                       </Link>
                     </li>
                   ))}
@@ -142,7 +142,7 @@ export default function ServicePage({ params }: Params) {
                       href="/townsville"
                       className="font-semibold text-hivis-600 underline underline-offset-4"
                     >
-                      All Townsville suburbs →
+                      All tow truck Townsville suburbs →
                     </Link>
                   </li>
                 </ul>

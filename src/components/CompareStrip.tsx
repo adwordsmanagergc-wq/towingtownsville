@@ -54,7 +54,7 @@ export function CompareStrip() {
         </ul>
         <div className="mt-8">
           <Link href="/compare" className="text-sm font-semibold text-navy-800 underline">
-            See full comparison criteria →
+            How we compare Townsville towing companies →
           </Link>
         </div>
       </div>

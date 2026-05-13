@@ -80,7 +80,7 @@ export default function SuburbPage({ params }: Params) {
         <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2">
           <div>
             <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">
-              Tow services available in {suburb.name}
+              Tow truck Townsville services in {suburb.name}
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {services.map((s) => (
@@ -89,7 +89,7 @@ export default function SuburbPage({ params }: Params) {
                     href={`/services/${s.slug}`}
                     className="text-navy-800 hover:text-hivis-600 underline underline-offset-4"
                   >
-                    {s.h1.replace(' in Townsville', '').replace(' from Townsville', '')}
+                    {s.h1}
                   </Link>
                 </li>
               ))}
@@ -97,7 +97,7 @@ export default function SuburbPage({ params }: Params) {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">
-              Nearby Townsville suburbs
+              Nearby towing Townsville suburbs
             </h2>
             <ul className="space-y-2">
               {neighbours.map((n) => (
@@ -106,7 +106,7 @@ export default function SuburbPage({ params }: Params) {
                     href={`/townsville/${n.slug}`}
                     className="text-navy-800 hover:text-hivis-600 underline underline-offset-4"
                   >
-                    {n.name}
+                    Tow truck {n.name}
                   </Link>
                 </li>
               ))}
@@ -115,7 +115,7 @@ export default function SuburbPage({ params }: Params) {
                   href="/townsville"
                   className="font-semibold text-hivis-600 underline underline-offset-4"
                 >
-                  All Townsville suburbs →
+                  All towing Townsville suburbs →
                 </Link>
               </li>
             </ul>
