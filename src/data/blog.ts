@@ -5,6 +5,179 @@ import type { BlogPost } from '@/types';
 // rendered by the lightweight markdown helper in src/lib/md.ts.
 export const allBlogPosts: BlogPost[] = [
   {
+    slug: 'townsville-accident-hotspots-driving-guide',
+    title: "Townsville's accident hotspots — the roads, intersections and conditions to drive carefully through",
+    description:
+      "A local-knowledge guide to Townsville's most accident-prone roads, intersections and seasons — Ring Road merges, Bruce Highway approaches, Charters Towers Road, Hervey Range and the wet-season bingle zones — and what to do if you end up needing a tow.",
+    date: '2026-05-12',
+    author: 'Townsville Towing Compare',
+    readMinutes: 8,
+    body: `## Why this guide exists
+
+A surprising number of Townsville's accident and breakdown callouts cluster on the same handful of roads, intersections and seasonal conditions year after year. If you live here, you already half-know the list — the Ring Road merge that nobody indicates on, the Bruce Highway stretch where fatigue catches drivers out, the Charters Towers Road run from Aitkenvale to the CBD that gets hairy on Friday afternoons. This is the long-form version, written for anyone new to Townsville and for locals who want to give it to a partner or a teenager learning to drive.
+
+This is general guidance, not legal advice — and conditions change. Drive to what's in front of you, not to what was true last month.
+
+### The Townsville Ring Road
+
+The Ring Road is the single biggest source of single-vehicle and rear-end callouts in the Townsville metro. Three specific situations recur:
+
+- **Merge zones near Douglas and Mount Louisa.** Drivers slow to a crawl at the merge rather than matching highway speed, and the car behind them is doing 100. Most of the rear-enders we see come from this pattern.
+- **The wet-season run-off.** Tropical downpours turn the shoulder slick in under a minute. A single light touch of the brake or steering at speed is enough to spin a 2WD. If the wipers are at full speed, drop your speed by 20 km/h.
+- **Heavy-vehicle interactions.** Townsville is freight country. A road train that needs to brake hard takes a lot of road to do it. Don't sit in the no-zone immediately behind or beside one — give yourself the gap to react.
+
+If you have to pull over on the Ring Road, get **fully** off the carriageway, hazards on, stand well clear, and call recovery. See the [Ring Road towing guide](/townsville/ring-road) for what to expect.
+
+### The Bruce Highway south of Townsville
+
+The southern stretch of the Bruce Highway out toward Ayr and beyond is where long-haul fatigue catches drivers out. Single-vehicle run-offs after dark are the dominant pattern, alongside roo strikes at dawn and dusk. Two practical things help:
+
+- Don't drive Townsville-to-Mackay on the back of a full working day. Either start earlier or break the trip up.
+- Animals are most active around sunrise and sunset. Drop speed, drive on high-beam where you can, and assume more animals are nearby once you see the first one.
+
+For heavy-vehicle issues on the Bruce, see [the heavy breakdown guide](/blog/heavy-vehicle-breakdown-bruce-highway-townsville).
+
+### Charters Towers Road and the Nathan Street axis
+
+The Charters Towers Road / Nathan Street intersection is one of the busier inner-Townsville hotspots for low-speed nose-to-tails. Afternoon peak between roughly 4pm and 6pm is the worst window, made harder by sun glare westbound. Common causes:
+
+- Drivers running yellow lights into stationary queues.
+- Lane-changing in the last 50m before the intersection.
+- Distracted driving — phones, takeaway, the dog moving around.
+
+Even a slow-speed bingle here tends to need a tow because traffic doesn't let you swap details safely in the live lane. The [accident towing page](/services/accident-towing) walks through the first ten minutes.
+
+### Stockland Townsville and shopping-centre carparks
+
+Carpark prangs at Stockland Townsville, Willows Shopping Centre, Castletown and the Castletown / Hyde Park area aren't dramatic, but they happen every weekend. Reversing out of bays, blind corners on the ramps, and trolleys are the usual story. Things that help:
+
+- Reverse-park where you can — pulling out forwards is safer than reversing into a moving carpark.
+- Use the reverse camera AND turn your head — cameras have blind zones close to the bumper.
+- If you're driving an SUV or ute, you're sitting higher than a sedan driver can see when they're reversing past you.
+
+### The Hervey Range climb and out-of-town routes
+
+The Hervey Range climb west of Townsville is short but technical. Drivers who don't know the road regularly get into trouble in three places: the first hairpin going up, the wet weather greasy stretch near the top, and the descent run-out. Motorbikes come off the climb more often than people realise. The [4WD recovery guide](/blog/4wd-bogged-pallarenda-alva-beach-recovery-guide) covers some of the soft-ground sections beyond the bitumen.
+
+### Roundabouts that bite
+
+Three Townsville roundabouts produce more than their share of callouts: the larger Idalia/Hugh Street roundabouts, the Riverway Drive roundabouts in Thuringowa, and the older single-lane roundabouts near the CBD that out-of-towners misread as give-ways. Rule of thumb: indicate **on entry and on exit**, every time, and assume the car in the next lane is going to swap into yours.
+
+### Wet-season specifics
+
+From roughly December to March, Townsville drives on a different road. Standing water is the new normal, the bitumen is greasier when rain starts after a dry stretch, and visibility drops to nothing for 30-second bursts in a storm. Lower the speed, lengthen the gap, and assume the car you can no longer see is closer than it was.
+
+### Saturday-night Charters Towers Road and Flinders Street
+
+Friday and Saturday nights along the Flinders Street strip and the southern end of Charters Towers Road bring a higher rate of low-speed bingles, kerb hits and lockouts. Stay sharp, share rides when you've been out, and put the tow operator's number in your phone before you go.
+
+### School zones
+
+Townsville's school zones are clearly marked at 40 km/h, but they catch out drivers passing through suburbs they don't live in. Mornings between 7:30 and 9:00 and afternoons between 2:30 and 4:00 are the windows.
+
+### What to do if it happens
+
+If you do end up needing a tow, the short version is in our [first 10 minutes guide](/blog/accident-towing-townsville-first-10-minutes). The shorter version:
+
+- Get everyone safe.
+- Call 000 if anyone is hurt.
+- Pick your own tow company — you have that right in Queensland.
+- Take photos before anything moves.
+
+Both of our [recommended operators](/recommended) cover the suburbs and roads above 24/7. Kwiktow NQ is the call we make most often for accident response; ABC Towing for heavier vehicles.`,
+  },
+  {
+    slug: 'broken-down-townsville-finding-a-good-mechanic',
+    title: 'Broken down in Townsville? How to pick a good mechanic (and the right tow)',
+    description:
+      "If your car has broken down or needs a repair in Townsville, the workshop you pick matters as much as the tow. Here's our framework for finding a trustworthy local mechanic — and how to coordinate the handoff with the tow operator.",
+    date: '2026-05-11',
+    author: 'Townsville Towing Compare',
+    readMinutes: 8,
+    body: `## The honest answer about "top 10 mechanic" lists
+
+We get asked all the time for a top-ten Townsville mechanics list. We don't publish one — and we won't, for two reasons. First, workshop rankings on Google rotate faster than most people realise: ownership changes, head mechanics leave, weekly review volume swings the average. A list that was right two years ago is wrong today. Second, the "best" mechanic for **you** depends on what your car is, what's wrong with it, and where you live. The best 4WD recovery specialist in Townsville is not the right choice for a 12-month-old EV under warranty.
+
+So instead of a list that goes stale, here's the framework we use ourselves when something goes wrong with our own cars. Apply it to your shortlist and you'll land on a workshop that'll still be the right call in two years.
+
+### What "good" looks like in a Townsville workshop
+
+There are three honest categories of mechanic in Townsville:
+
+- **Logbook / dealer service**. Right answer if your car is under manufacturer warranty or you need a specific dealer-only diagnostic tool. More expensive, but warranty-safe.
+- **Independent generalist**. The everyday workshop that handles services, brakes, tyres, batteries, electrics and most repairs across mainstream makes. Most Townsville cars live here.
+- **Specialist**. Diesel injector shops, EV-certified workshops, European-marque specialists, performance shops, off-road outfitters, transmissions specialists. Worth the drive for the right job.
+
+If your car is out of warranty and you don't know what's wrong, a good independent generalist is the cheapest, fastest answer 80% of the time. They'll diagnose first and refer out to a specialist if needed.
+
+### The 6 checks before you hand over keys
+
+This is the framework. Apply all six to your shortlist:
+
+**1. Licensed in Queensland.** A Townsville workshop should hold a current Motor Vehicle Repairers (MVR) licence under the Motor Dealers and Chattel Auctions Act. Ask for the licence number if it isn't displayed in the workshop.
+
+**2. Insurance.** Public liability and workshop insurance is non-negotiable for any business touching your vehicle. The good ones can show you the certificate of currency without flinching.
+
+**3. Reviews — depth, not just stars.** A workshop with 250 Google reviews at 4.6 stars beats one with 12 reviews at 5.0 stars. Read the **one and two-star reviews** in particular — that's where you see how the workshop handles a hard situation. A workshop that responds professionally to a critical review is usually a workshop that'll handle you professionally too.
+
+**4. A written quote before work starts.** Reputable Townsville workshops give you a written quote, scope the job, and call you before going over the number. If the conversation is vague, walk away.
+
+**5. Diagnostic fees explained.** Diagnostic time is real work. Expect to pay for it. What you don't want is a workshop that diagnoses for free and recovers it with inflated parts pricing — ask up front.
+
+**6. Logbook stamping (if it matters).** If your car is under warranty, confirm the workshop will stamp the logbook to manufacturer schedule. Most independent shops can; if yours can't, you may need a dealer service.
+
+### Where Townsville workshops cluster
+
+Townsville's workshop footprint runs through a handful of zones:
+
+- **Garbutt and the Bohle.** Light-industrial estates that house a lot of the city's independent generalists and specialists, plus heavy-vehicle workshops. See the [Garbutt towing guide](/townsville/garbutt) for the access streets.
+- **Mount St John and Bohle Industrial.** Heavy and machinery work, fleet service. Most heavy-vehicle recoveries from the highway end up around here.
+- **Kirwan and Thuringowa.** A mix of dealer service centres and independent workshops handling the western residential pockets. See [Kirwan towing](/townsville/kirwan).
+- **CBD fringe — West End and Hermit Park.** Smaller independent shops and a couple of European-marque specialists. See [West End](/townsville/west-end).
+- **South-side — Idalia and Oonoonba.** Newer service capacity for the south-of-the-river suburbs. See [Idalia](/townsville/idalia).
+
+If you live in one of these areas, a workshop within a few kilometres usually beats a longer tow to a "name" shop on the other side of the city — assuming the workshop passes the six checks above.
+
+### Coordinating the tow with the workshop
+
+Here's where it goes wrong most often: the tow truck arrives, the customer hasn't decided where to take the car, and the operator suggests a workshop they have an arrangement with. That arrangement is fine when both parties are honest, but you should be making the call, not the operator.
+
+Three practical steps:
+
+- **Pick the workshop before the tow arrives.** Even a 30-second phone call ("Hi, my car has died, can you take a look this week?") locks in the destination.
+- **Check the workshop is actually open** when the tow will arrive. Half the city is closed on Sundays.
+- **Confirm key drop** if you're towing after hours. Most independent Townsville workshops have a key safe at the gate.
+
+Both of our [recommended operators](/recommended) tow to the workshop **you** nominate, not theirs. See the [breakdown towing page](/services/breakdown-towing) for what the tow itself involves.
+
+### When to bypass the closest workshop
+
+A couple of situations where the nearest workshop is the wrong call:
+
+- **Vehicle still under manufacturer warranty.** Use a licensed dealer or factory-certified workshop, even if it's a longer tow.
+- **EV with a high-voltage fault.** Use an EV-certified workshop or the dealer. Hot-swapping a 12V battery is fine for any shop; HV traction-battery work is not.
+- **Diesel injector fault.** A diesel injector specialist is worth the drive — the diagnostic gear pays for itself.
+- **Transmission failure.** A transmission specialist or the dealer beats a generalist for serious gearbox work.
+
+### Cost ranges in 2026
+
+Rough Townsville benchmarks, useful only as a sanity check:
+
+- **Basic logbook service (small car):** $250–$400
+- **Brake pads (axle):** $300–$600 fitted
+- **Battery (standard car):** $200–$400 fitted
+- **Diagnostic scan + report:** $120–$220
+- **Hourly workshop rate (independent):** $130–$180
+
+Anything dramatically above these without a written explanation is worth a second quote.
+
+### So who do you actually take the car to?
+
+The shortlist is the workshop within 5–10 km of where you live or work that **passes all six checks above** and has consistent four-and-five-star reviews on Google over the last 12 months. Ring two workshops, ask the same questions, and listen to which one sounds more interested in fixing your car versus moving it through the bay.
+
+If you want a hand getting the car there in one piece, our [recommended Townsville tow operators](/recommended) will tow to any workshop you nominate. Kwiktow NQ is the call most people make for everyday breakdowns; ABC Towing for anything heavier.`,
+  },
+  {
     slug: 'tow-truck-cost-townsville-2026',
     title: 'How much does a tow truck cost in Townsville? (2026 guide)',
     description:
