@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes = [
-    '',
+    '/',
     '/services',
     '/townsville',
     '/recommended',
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
-    priority: p === '' ? 1 : 0.8,
+    priority: p === '/' ? 1 : 0.8,
   }));
 
   const serviceRoutes = services.map((s) => ({
