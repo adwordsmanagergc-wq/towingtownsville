@@ -5,6 +5,176 @@ import type { BlogPost } from '@/types';
 // rendered by the lightweight markdown helper in src/lib/md.ts.
 export const allBlogPosts: BlogPost[] = [
   {
+    slug: 'broken-down-in-townsville-causes-and-recovery',
+    title: "Broken Down in Townsville? Every Way Your Vehicle Can Fail (and What to Do Next)",
+    description:
+      "Broken down in Townsville? A plain-English run-through of every way cars, utes, trucks, 4WDs, bikes and boat trailers fail in NQ — and how to get a tow truck Townsville locals trust.",
+    date: '2026-05-15',
+    author: 'Townsville Towing Compare',
+    readMinutes: 8,
+    faqs: [
+      {
+        q: "What's the most common reason cars break down in Townsville?",
+        a: "Flat or failing batteries are the single most common Townsville roadside callout. The heat is brutal on lead-acid batteries — most last 18–24 months in NQ rather than the 3–4 years they'd manage in a cooler climate. If your car cranks slowly or won't start after the weekend, the battery is the first suspect.",
+      },
+      {
+        q: "Can a tow truck Townsville operator handle a bogged 4WD on the beach?",
+        a: "Yes — but tell them on the call. Beach and soft-sand recoveries need a 4WD recovery rig with the right snatch, winch and traction gear, not a standard tilt tray. See our [4WD recovery service page](/services/4wd-and-off-road-recovery) for what's involved.",
+      },
+      {
+        q: "Should I push my car off the road before the tow arrives?",
+        a: "Only if it's safe and you're not in traffic. On the Ring Road, the Bruce Highway or any high-speed shoulder, stay belted in and let the tow operator manage the recovery with traffic awareness.",
+      },
+      {
+        q: "Do Townsville tow operators come out for boat-trailer breakdowns?",
+        a: "Yes. Wheel-bearing failures and blown trailer tyres on the way home from the ramp are common Townsville callouts — see [boat and trailer transport](/services/boat-and-trailer-transport).",
+      },
+      {
+        q: "Is there 24/7 emergency towing in Townsville?",
+        a: "Yes. The reputable operators answer the phone around the clock for accident and breakdown work — see [24/7 emergency towing](/services/24-7-emergency-towing).",
+      },
+    ],
+    body: `## Why Townsville chews vehicles up faster than most cities
+
+Townsville isn't a kind place to a car. Heat that hits 35°C+ for six months of the year, monsoon storms that flood low-lying roads in minutes, long stretches of highway between fuel stops, soft-sand beach access at Pallarenda and Alva Beach, the Hervey Range climb, and corrugated station tracks west of the Ring Road — each one accelerates a specific failure mode. If you drive in NQ, your odds of needing a [tow truck Townsville](/) operator at some point in your ownership are basically 100%.
+
+This guide walks through every way vehicles fail in Townsville — from the everyday flat battery in an Aitkenvale carpark to a prime mover stuck on the Bruce Highway — and tells you exactly who to call for each.
+
+## Cars and SUVs — the everyday failures
+
+### Flat or dead battery
+
+The single most common Townsville roadside callout. Heat kills lead-acid batteries fast — expect 18–24 months in NQ instead of the 3–4 years you'd get further south. Modern start-stop vehicles drain even faster.
+
+**What to do:** Try a [jump start](/services/jump-start) first. If the battery won't hold a charge after a jump, you need a tow to a battery shop.
+
+### Alternator failure
+
+Often mistaken for a battery issue. The car runs fine until you drive home with headlights on, then suddenly dies because the alternator has stopped charging the battery for the last hour.
+
+**What to do:** Tow to your mechanic. The car won't restart and won't run for long even if it does.
+
+### Cooling system failure (radiator, hoses, water pump)
+
+Townsville heat plus a tired radiator hose equals a steam cloud on the side of the road. Common around long weekends, after road trips, and on hot afternoons.
+
+**What to do:** Stop immediately. Driving a hot engine warps heads and destroys head gaskets. Call a [breakdown towing](/services/breakdown-towing) operator — do not push your luck "just to get home".
+
+### Running out of fuel
+
+Sounds dumb, but the stretches of road around Townsville mean drivers run dry more often than they'd admit. The Ring Road, the Bruce Highway south, and any rural run past Mount Stuart have long gaps between service stations.
+
+**What to do:** [Emergency fuel delivery](/services/fuel-delivery) gets you 5–10 litres to the next pump.
+
+### Locked out
+
+Keys in the boot at the Strand, smart-key flat in the carpark, child locked inside a hot car. All everyday Townsville callouts.
+
+**What to do:** Call a [lockout service](/services/lockout-service). For a child or pet inside a hot vehicle, dial 000 and the tow operator simultaneously.
+
+### Tyre damage
+
+Pothole season after the wet chews through tyres faster than people expect. Sidewall blowouts on the Ring Road shoulder are a regular call.
+
+**What to do:** [Tyre change roadside assist](/services/tyre-change-roadside-assist) if you've got a usable spare; tow to a tyre shop if you don't.
+
+## Utes and light commercial — the working-day failures
+
+Tradies, fleet vehicles and dual-cab utes have their own pattern. Clutches that have lived a hard life, brakes that have done too many tip-offs at landfill, electricals shorted by the tarp setup, batteries that have been deep-cycled by an auxiliary fridge — all common.
+
+The tow itself is usually a standard [tilt tray](/services/tilt-tray-towing) job to your fleet workshop or preferred mechanic. If the ute is loaded, mention that on the call so the operator brings the right tie-down kit.
+
+## Trucks, prime movers and heavy vehicles
+
+Heavy-vehicle breakdowns aren't passenger-car territory — they need a heavy operator with underlift or rotator capacity. Townsville sees its share on the Bruce Highway, Flinders Highway and around the Bohle, Mount St John and Garbutt industrial estates.
+
+Common heavy failures:
+
+- **Brake system faults** — air leak, spring brake stuck on, ABS sensor fault
+- **Cooling failure** on long climbs (Hervey Range, the Bruce ascents)
+- **Driveline issues** — clutch, transmission, diff
+- **Tyre or wheel-end failure** — blowouts at speed, bearing failures
+
+See [heavy haulage towing](/services/heavy-haulage-towing) for what a recovery looks like, and the [Bruce Highway breakdown guide](/blog/heavy-vehicle-breakdown-bruce-highway-townsville) for what to do at the scene.
+
+## 4WD recovery — sand, mud, beach, bush
+
+This is the one most people underestimate. Townsville is the easiest place in Australia to own a 4WD and the easiest place to get one badly stuck.
+
+### Soft sand and beach recoveries
+
+**Pallarenda, Alva Beach, Cape Pallarenda** — soft-sand bogs are the daily 4WD recovery callout. The pattern is always the same: driver came in from harder track, didn't deflate tyres enough, sank into the soft section just past the access ramp.
+
+**What to do:** Stop spinning the wheels immediately. Drop tyres to 18 psi or lower. Clear sand in front of the wheels. If the tide is coming up, stop trying to self-recover and call a [4WD and off-road recovery](/services/4wd-and-off-road-recovery) operator now. A vehicle that ends up in saltwater is a different (and much more expensive) problem.
+
+See our full [Pallarenda / Alva Beach recovery guide](/blog/4wd-bogged-pallarenda-alva-beach-recovery-guide) for the step-by-step.
+
+### Mud bogs after the wet
+
+The back tracks west of the Ring Road, station roads beyond Mount Stuart, and the corrugated runs out toward Hervey Range can turn into mud-pit territory in a single storm.
+
+**What to do:** Same as sand — stop spinning, assess, call. Mention "mud, not sand" on the call so the recovery operator brings the right kit.
+
+### Creek crossings and water damage
+
+Wet-season crossings hide deep holes that weren't there last weekend. A vehicle that's gone deep enough to draw water into the airbox needs a tow straight to a workshop — do not attempt to restart it.
+
+### Hung up on chassis
+
+Sometimes the vehicle isn't bogged in the traditional sense — it's high-centred on a ridge, a log, or a sand hump, with all four wheels off the ground. A winch recovery is the only safe option.
+
+## Caravans, camper trailers and recreational
+
+Most caravan breakdowns happen on the tow vehicle, not the trailer. But trailers have their own failure modes:
+
+- **Wheel-bearing failure** — usually starts as a low rumble, ends as a locked wheel
+- **Brake controller / electric brake faults**
+- **Coupling or chain failures** on rough roads
+
+A caravan can usually be recovered behind a standard tow truck if the tow vehicle is dead. Mention dimensions and ATM weight on the call.
+
+## Motorbikes
+
+Bike breakdowns are usually electrical (battery, stator, ignition), tyre-related, or chain-related. The tow itself needs proper bike straps and a wheel chock — see [motorbike towing](/services/motorbike-towing). A generic tow truck without bike gear is the wrong call; fork seals and tank paint pay the price.
+
+Common Townsville locations: the Hervey Range climb (sport bikes), Charters Towers Road through Aitkenvale (commuters), the Magnetic Island ferry terminal (vehicles returning from the island).
+
+## Boats on trailers
+
+Most boat-trailer breakdowns happen on the way home from the ramp:
+
+- **Saltwater-cooked wheel bearings** — the dominant failure
+- **Blown trailer tyres** — sidewall age more than tread wear
+- **Tow vehicle dies with the boat still hooked up**
+
+See [boat and trailer transport](/services/boat-and-trailer-transport). Mention whether the boat is loaded and the trailer's tow-ball weight when booking.
+
+## "Just push it" is not an option in Townsville
+
+In a cooler city, the broken-down driver might walk to the nearest mechanic. In Townsville, the heat, the distance between buildings, and the highway shoulders make that a genuinely bad idea. A 30-minute walk on the Bruce Highway shoulder at 1pm in February is a heatstroke risk. A bogged 4WD with a tide coming up is a write-off risk. The right answer is almost always: stay with the vehicle, hazards on, call for a tow.
+
+## What to do right now if you've broken down
+
+1. **Get off the road** — hazards on, coast to the shoulder if the vehicle is still moving.
+2. **Stay with the vehicle** unless traffic makes that unsafe.
+3. **Drop a Google Maps pin** so the tow operator can find you fast.
+4. **Call a [tow truck Townsville](/) operator** — explain what's wrong, what the vehicle is, where you want it taken.
+5. **Take photos** — for the insurer, the mechanic and your own records.
+
+## Who to call
+
+The Townsville tow operators we recommend cover every category above — passenger vehicle, heavy, 4WD recovery, motorbike, caravan, boat trailer — 24/7 across the Townsville metro and out to the Ring Road, Magnetic Island ferry terminal and the Bruce Highway approaches.
+
+See the **[recommended operators on our home page](/)** for direct contact details, or read the longer write-up of why we recommend them at **[/recommended](/recommended)**. Both operators take direct bookings and will tow to the workshop you nominate, not theirs.
+
+## Related guides
+
+- [How much does a tow truck cost in Townsville? (2026 guide)](/blog/tow-truck-cost-townsville-2026)
+- [Accident towing in Townsville — first 10 minutes](/blog/accident-towing-townsville-first-10-minutes)
+- [Townsville's accident hotspots](/blog/townsville-accident-hotspots-driving-guide)
+- [Tilt tray vs flatbed vs hook-and-chain](/blog/tilt-tray-vs-flatbed-vs-hook-and-chain)
+- [Top 10 mechanics in Townsville](/blog/top-10-mechanics-townsville-towing-service)`,
+  },  {
     slug: 'townsville-accident-hotspots-driving-guide',
     title: "Townsville's accident hotspots — the roads, intersections and conditions to drive carefully through",
     description:
