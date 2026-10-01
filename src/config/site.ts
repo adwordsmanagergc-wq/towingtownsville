@@ -14,7 +14,9 @@ export const site = {
   domain: 'towingtownsville.com',
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-    'https://towingtownsville.com',
+    // Vercel serves the site on www (the apex redirects there), so canonicals
+    // and the sitemap must use www or Google sees every canonical redirect.
+    'https://www.towingtownsville.com',
   locale: 'en-AU',
   region: 'Townsville, QLD, Australia',
   contactEmail: 'hello@towingtownsville.com',
