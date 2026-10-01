@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
-    priority: p === '/' ? 1 : 0.8,
+    priority: p === '/' ? 1 : p === '/townsville' || p === '/services' ? 0.9 : 0.6,
   }));
 
   const serviceRoutes = services.map((s) => ({
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/townsville/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }));
 
   const blogRoutes = allBlogPosts.map((p) => ({

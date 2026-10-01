@@ -11,7 +11,7 @@ html, body {
 }
 
 main {
-  @apply pb-20 md:pb-0;
+  @apply pb-0;
 }
 
 /* Improved focus visibility for keyboard users. */
@@ -24,6 +24,9 @@ main {
 .prose-towing :where(p) {
   @apply text-[15.5px] leading-relaxed text-slate-700;
 }
+.prose-towing :where(p + p, p + ul, ul + p, h3 + p) {
+  @apply mt-4;
+}
 .prose-towing :where(h2) {
   @apply font-display text-2xl md:text-3xl font-bold text-navy-900 mt-10 mb-4;
 }
@@ -35,4 +38,34 @@ main {
 }
 .prose-towing :where(a) {
   @apply text-hivis-600 underline underline-offset-4 hover:text-hivis-400;
+}
+
+.prose-towing :where(ol) {
+  @apply list-decimal pl-6 space-y-1 text-slate-700;
+}
+.prose-towing :where(p + ol, ol + p) {
+  @apply mt-4;
+}
+
+/* Long-form article typography (blog posts). */
+.prose-article :where(p, li) {
+  @apply text-[17px] leading-[1.75];
+}
+.prose-article :where(h2) {
+  @apply mt-12 pt-6 border-t border-slate-100;
+}
+.prose-article :where(h2:first-child) {
+  @apply mt-0 pt-0 border-0;
+}
+.prose-article :where(ul, ol) {
+  @apply my-5 space-y-2;
+}
+.prose-article :where(li)::marker {
+  @apply text-hivis-600 font-semibold;
+}
+.prose-article :where(strong) {
+  @apply text-navy-900 font-semibold;
+}
+.prose-article :where(code) {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em];
 }

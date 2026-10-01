@@ -1,34 +1,49 @@
 import Link from 'next/link';
-import { suburbs } from '@/data/suburbs';
+import { suburbs, suburbsByRegion } from '@/data/suburbs';
 
 export function SuburbStrip() {
   return (
-    <section className="py-14 bg-navy-800 text-white">
+    <section className="py-16 md:py-20 bg-navy-800 text-white">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="font-display text-3xl md:text-4xl font-bold">Towing across Townsville.</h2>
-        <p className="text-slate-100/80 mt-3 max-w-2xl">
-          Same recommended operators, every postcode. Find the local guide for your suburb.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {suburbs.map((s) => (
-            <li key={s.slug}>
-              <Link
-                href={`/townsville/${s.slug}`}
-                className="inline-flex items-center text-sm font-medium px-3 py-1.5 rounded-full border border-white/20 hover:bg-white/10"
-              >
-                {s.name}
-              </Link>
-            </li>
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-hivis-400 font-bold mb-2">
+            Service area
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold">
+            Towing Townsville suburbs — all {suburbs.length} covered.
+          </h2>
+          <p className="text-slate-100/80 mt-3">
+            Same recommended 24/7 operators, every postcode from 4810 to 4819. Pick your suburb for
+            local towing advice.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {suburbsByRegion.map((r) => (
+            <div key={r.key}>
+              <h3 className="font-display font-bold text-hivis-400 text-sm uppercase tracking-wider mb-3">
+                {r.label}
+              </h3>
+              <ul className="flex flex-wrap gap-1.5">
+                {r.suburbs.map((s) => (
+                  <li key={s.slug}>
+                    <Link
+                      href={`/townsville/${s.slug}`}
+                      className="inline-flex items-center text-[13px] font-medium px-2.5 py-1 rounded-full border border-white/15 hover:bg-white/10 hover:border-white/30"
+                    >
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-          <li>
-            <Link
-              href="/townsville"
-              className="inline-flex items-center text-sm font-semibold px-3 py-1.5 rounded-full bg-hivis text-navy-900 hover:bg-hivis-400"
-            >
-              All suburbs →
-            </Link>
-          </li>
-        </ul>
+        </div>
+        <Link
+          href="/townsville"
+          className="mt-10 inline-flex items-center text-sm font-semibold px-4 py-2 rounded-lg bg-hivis text-navy-900 hover:bg-hivis-400"
+        >
+          Tow truck Townsville — all suburbs →
+        </Link>
       </div>
     </section>
   );

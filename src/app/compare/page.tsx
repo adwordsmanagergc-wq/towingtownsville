@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { CheckCircle2, Clock, DollarSign, ShieldCheck, Star, Truck, BadgeCheck } from 'lucide-react';
+import { PageHero } from '@/components/PageHero';
+import { CallButtons } from '@/components/CallButtons';
 import { CompareTable } from '@/components/CompareTable';
 import { JsonLd } from '@/components/JsonLd';
-import { RecommendedCompaniesBlock } from '@/components/RecommendedCompaniesBlock';
 import { breadcrumbSchema, recommendedItemListSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { companies } from '@/data/companies';
@@ -18,6 +19,49 @@ export const metadata: Metadata = buildMetadata({
     'Insurance, fleet, response time, reviews — the criteria we use before we recommend any tow operator.',
 });
 
+const criteria = [
+  {
+    icon: ShieldCheck,
+    title: 'Insurance & licensing',
+    body: "Full public liability and goods-in-transit insurance, plus the licences for the trucks they run. Operators who can't produce a current certificate of currency on request don't make the list.",
+  },
+  {
+    icon: Truck,
+    title: 'Fleet & equipment',
+    body: 'The right truck for the right job:',
+    points: [
+      'Tilt trays for damage-free car and prestige moves',
+      'Heavy rigs for trucks, prime movers and big 4WDs',
+      'Gear for NQ conditions — sand, wet season, machinery',
+    ],
+  },
+  {
+    icon: Clock,
+    title: '24/7 availability & response',
+    body: 'A tow truck that "usually" answers after hours isn\'t a tow truck. We look at:',
+    points: [
+      'True 24/7 phone availability',
+      'Average response across urban Townsville',
+      'Peak nights — long weekends, wet season, events',
+    ],
+  },
+  {
+    icon: Star,
+    title: 'Reviews & reputation',
+    body: 'Volume, consistency and how the operator handles the hard reviews. We weight well-reviewed Google profiles more heavily and read what customers say about accidents, after-hours and heavy jobs.',
+  },
+  {
+    icon: DollarSign,
+    title: 'Pricing transparency',
+    body: "A clear quote upfront and the same number on the invoice. We avoid any operator with a pattern of disputed or inflated invoices.",
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Insurance-approved status',
+    body: "Being on major Australian insurers' panels means the paperwork is in order and accident handling meets a recognised standard. Both recommended companies meet this bar.",
+  },
+];
+
 export default function ComparePage() {
   return (
     <>
@@ -29,92 +73,62 @@ export default function ComparePage() {
       />
       <JsonLd data={recommendedItemListSchema(companies)} />
 
-      <section className="bg-navy-800 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-          <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Compare', href: '/compare' }]} />
-          <p className="text-xs uppercase tracking-[0.25em] text-hivis-400 font-bold mb-3">
-            Comparison Framework
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
-            How we compare towing companies in Townsville.
-          </h1>
-          <p className="mt-4 text-slate-100/85 max-w-2xl text-lg">
-            Anyone can put a tow truck on Facebook Marketplace. We don't recommend an operator
-            until they've passed all six of the checks below — and we keep checking.
-          </p>
+      <PageHero
+        crumbs={[{ name: 'Home', href: '/' }, { name: 'Compare', href: '/compare' }]}
+        eyebrow="Comparison framework"
+        title="How we compare towing companies in Townsville."
+        intro="Anyone can put a tow truck on Facebook Marketplace. We don't recommend an operator until they've passed all six of the checks below — and we keep checking."
+      />
+
+      <section className="py-12 md:py-16 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="max-w-3xl prose-towing">
+            <p>
+              When something goes wrong on the road, you don&apos;t have time to triage which tow
+              company to call. That&apos;s why this site exists: to do the homework once, properly,
+              so you can ring someone you can trust and get on with your day.
+            </p>
+            <p>
+              We score every Townsville operator we research against the same six criteria. The
+              two companies on our home page — Kwiktow NQ and ABC Towing Services — are the
+              operators we currently recommend most. Here is exactly how we got there.
+            </p>
+          </div>
+
+          <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-navy-900">
+            The 6-criteria framework
+          </h2>
+          <ol className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {criteria.map((c, i) => (
+              <li key={c.title} className="relative rounded-2xl border border-slate-100 bg-slate-50 p-6">
+                <span className="absolute right-5 top-5 font-display text-4xl font-extrabold text-slate-200">
+                  {i + 1}
+                </span>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-hivis/15">
+                  <c.icon className="h-6 w-6 text-hivis-600" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-navy-900">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">{c.body}</p>
+                {c.points && (
+                  <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                    {c.points.map((pt) => (
+                      <li key={pt} className="flex gap-2">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-hivis-600 mt-0.5" aria-hidden />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
-
-      <article className="py-14 md:py-20 bg-white">
-        <div className="mx-auto max-w-3xl px-4 prose-towing">
-          <p>
-            When something goes wrong on the road, you don't have time to triage which tow
-            company to call. That's why this site exists: to do the homework once, properly, so
-            you can ring someone you can trust and get on with your day.
-          </p>
-          <p>
-            We score every Townsville operator we research against the same six criteria. The
-            two companies on our home page — ABC Towing Services and Kwiktow NQ — are the
-            operators we currently recommend most. The framework below is exactly how we got
-            there.
-          </p>
-
-          <h2>The 6-Criteria Framework</h2>
-
-          <h3>1. Insurance &amp; Licensing</h3>
-          <p>
-            A tow operator must hold full public liability and goods-in-transit insurance, and
-            the licences appropriate to the trucks they run. Operators who can't (or won't)
-            produce a current certificate of currency on request don't make the list.
-          </p>
-
-          <h3>2. Fleet &amp; Equipment</h3>
-          <p>The right truck for the right job. We look for:</p>
-          <ul>
-            <li>Tilt trays for damage-free passenger and prestige vehicle moves.</li>
-            <li>Heavy recovery rigs for trucks, prime movers and large 4WDs.</li>
-            <li>
-              Recovery gear suited to North Queensland conditions — soft sand, beach work,
-              wet-season recoveries, machinery transport.
-            </li>
-          </ul>
-
-          <h3>3. 24/7 Availability &amp; Response Time</h3>
-          <p>A tow truck that "usually" answers after hours isn't a tow truck. We track:</p>
-          <ul>
-            <li>True 24/7 phone availability.</li>
-            <li>Average response time across the Townsville urban area.</li>
-            <li>How operators handle peak-load nights (long weekends, wet season, major events).</li>
-          </ul>
-
-          <h3>4. Reviews &amp; Reputation</h3>
-          <p>
-            Volume, consistency and how the operator handles the hard reviews — not the easy
-            ones. We weight Google ratings with at least 50 reviews more highly than thinly
-            reviewed competitors, and we read what customers say about the difficult jobs
-            (accidents, after-hours, heavy recovery).
-          </p>
-
-          <h3>5. Pricing Transparency</h3>
-          <p>
-            Reputable operators give you a clear quote upfront and don't change the number on
-            the invoice. We avoid recommending any operator with a pattern of disputed or
-            inflated invoices.
-          </p>
-
-          <h3>6. Insurance-Approved Status</h3>
-          <p>
-            Being on the panel for major Australian insurers signals two things: the operator's
-            paperwork is in order, and their handling of accident jobs is held to a recognised
-            standard. Both our recommended companies meet this bar.
-          </p>
-        </div>
-      </article>
 
       <section className="py-10 md:py-14 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-navy-900 mb-6">
-            Side-by-Side Comparison
+            Side-by-side comparison
           </h2>
           <CompareTable />
           <p className="text-xs text-slate-700 mt-3">
@@ -125,45 +139,51 @@ export default function ComparePage() {
       </section>
 
       <section className="py-14 md:py-20 bg-white">
-        <div className="mx-auto max-w-3xl px-4 prose-towing">
-          <h2>Why these two?</h2>
-          <p>
-            <strong>ABC Towing Services</strong> earns its place because of fleet weight and
-            operational maturity — a Townsville-based heavy-tow operator with a proper booking
-            flow, direct call and email pathways, and the kind of recovery gear most local
-            outfits don't run. If your job is big, awkward, or planned in advance, this is the
-            team we'd call first.
-          </p>
-          <p>
-            <strong>Kwiktow NQ</strong> earns its place on speed and breadth — a true 24/7
-            service that covers tilt-tray, accident, breakdown, 4WD, heavy, machinery and
-            boat-trailer recovery across Townsville and wider North Queensland, with an
-            advertised 30-minute average response time and a strong review profile. If your day
-            has gone sideways and you need someone now, this is who we tell people to ring.
-          </p>
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-navy-900">Why these two?</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-hivis-600">Speed &amp; breadth</p>
+              <h3 className="mt-1 font-display text-xl font-bold text-navy-900">Kwiktow NQ</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-slate-700">
+                A true 24/7 service covering tilt-tray, accident, breakdown, 4WD, heavy, machinery
+                and boat-trailer recovery across Townsville and wider North Queensland, with an
+                advertised 30-minute average response time and a strong review profile. If your
+                day has gone sideways and you need someone now, this is who we tell people to ring.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-hivis-600">Heavy &amp; planned jobs</p>
+              <h3 className="mt-1 font-display text-xl font-bold text-navy-900">ABC Towing Services</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-slate-700">
+                Fleet weight and operational maturity — a Townsville-based heavy-tow operator with
+                a proper booking flow, direct call and email pathways, and the kind of recovery
+                gear most local outfits don&apos;t run. If your job is big, awkward or planned in
+                advance, this is the team we&apos;d call first.
+              </p>
+            </div>
+          </div>
 
-          <h2>Disclosure</h2>
-          <p>
-            We may receive a referral fee or sponsorship from operators featured on this site.
-            We do not accept paid placements from operators that fail our six-criteria
-            framework, and we'll always tell you when a relationship is commercial. The
-            recommendation logic above is the same one we'd use if no money changed hands.
-          </p>
-          <p>
-            <Link href="/contact" className="underline">Contact us</Link> if you operate a tow
-            company in Townsville and want to be considered for the comparison.
-          </p>
+          <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6 max-w-3xl">
+            <h2 className="font-display text-lg font-bold text-navy-900">Disclosure</h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700">
+              We may receive a referral fee or sponsorship from operators featured on this site.
+              We do not accept paid placements from operators that fail our six-criteria
+              framework, and we&apos;ll always tell you when a relationship is commercial.{' '}
+              <Link href="/contact" className="font-semibold underline">Contact us</Link> if you
+              operate a tow company in Townsville and want to be considered.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-10 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900">
-            Need a tow truck right now?
-          </h2>
+      <section className="py-14 bg-navy-800 text-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold">Need a tow truck right now?</h2>
+          <p className="mt-2 text-slate-100/80">Both recommended operators answer 24/7.</p>
+          <CallButtons size="lg" className="mt-6" />
         </div>
       </section>
-      <RecommendedCompaniesBlock showHeading={false} />
     </>
   );
 }

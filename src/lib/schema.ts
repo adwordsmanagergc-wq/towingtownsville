@@ -1,12 +1,17 @@
 import { site } from '@/config/site';
 import type { Faq, ServicePage, Suburb, TowingCompany, BlogPost } from '@/types';
+import { companies } from '@/data/companies';
 
 export const orgSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
   name: site.name,
+  alternateName: [site.legacyName, site.domain],
   url: site.url,
   logo: `${site.url}/hero/towing-townsville.png`,
+  description: site.description,
+  email: site.contactEmail,
   areaServed: {
     '@type': 'AdministrativeArea',
     name: 'Townsville, Queensland',
@@ -17,8 +22,11 @@ export const orgSchema = () => ({
 export const websiteSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
   url: site.url,
   name: site.name,
+  alternateName: [site.legacyName, site.domain],
+  publisher: { '@id': `${site.url}/#organization` },
   description: site.description,
   inLanguage: 'en-AU',
 });
@@ -49,6 +57,39 @@ export const breadcrumbSchema = (
   })),
 });
 
+const townsville = {
+  '@type': 'City',
+  name: 'Townsville',
+  containedInPlace: { '@type': 'State', name: 'Queensland' },
+};
+
+// The recommended operators as AutomotiveBusiness entities (the closest
+// schema.org type to a tow truck company).
+const companyBusiness = (c: TowingCompany) => ({
+  '@type': 'AutomotiveBusiness',
+  name: c.name,
+  url: c.websiteUrl,
+  telephone: c.phone,
+  description: c.shortPitch,
+  areaServed: townsville,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Townsville',
+    addressRegion: 'QLD',
+    addressCountry: 'AU',
+  },
+  ...(c.available247
+    ? {
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '00:00',
+          closes: '23:59',
+        },
+      }
+    : {}),
+});
+
 export const recommendedItemListSchema = (companies: TowingCompany[]) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -56,14 +97,7 @@ export const recommendedItemListSchema = (companies: TowingCompany[]) => ({
   itemListElement: companies.map((c, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    item: {
-      '@type': 'LocalBusiness',
-      name: c.name,
-      url: c.websiteUrl,
-      telephone: c.phone,
-      areaServed: 'Townsville, QLD',
-      description: c.shortPitch,
-    },
+    item: companyBusiness(c),
   })),
 });
 
@@ -72,13 +106,27 @@ export const serviceSchema = (s: ServicePage) => ({
   '@type': 'Service',
   name: s.h1,
   serviceType: s.h1,
-  areaServed: { '@type': 'AdministrativeArea', name: 'Townsville, QLD' },
+  areaServed: townsville,
   description: s.metaDescription,
-  provider: {
-    '@type': 'Organization',
-    name: site.name,
-    url: site.url,
+  url: `${site.url}/services/${s.slug}`,
+  provider: companies.filter((c) => c.services.includes(s.slug)).map(companyBusiness),
+});
+
+// "Towing in <Suburb>" — a Service scoped to the suburb, provided by the
+// recommended operators. Reinforces the suburb + towing association.
+export const suburbServiceSchema = (s: Suburb) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Tow truck ${s.name}`,
+  serviceType: 'Towing service',
+  description: s.metaDescription,
+  url: `${site.url}/townsville/${s.slug}`,
+  areaServed: {
+    '@type': 'Place',
+    name: `${s.name}, Townsville QLD${s.postcode ? ` ${s.postcode}` : ''}`,
+    containedInPlace: townsville,
   },
+  provider: companies.map(companyBusiness),
 });
 
 export const placeSchema = (s: Suburb) => ({
@@ -86,10 +134,18 @@ export const placeSchema = (s: Suburb) => ({
   '@type': 'Place',
   name: `${s.name}, Townsville`,
   description: s.metaDescription,
-  containedInPlace: {
-    '@type': 'AdministrativeArea',
-    name: 'Townsville, QLD',
-  },
+  ...(s.postcode
+    ? {
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: s.name,
+          postalCode: s.postcode,
+          addressRegion: 'QLD',
+          addressCountry: 'AU',
+        },
+      }
+    : {}),
+  containedInPlace: townsville,
 });
 
 export const articleSchema = (post: BlogPost) => ({
@@ -99,8 +155,16 @@ export const articleSchema = (post: BlogPost) => ({
   description: post.description,
   datePublished: post.date,
   dateModified: post.date,
-  author: { '@type': 'Person', name: post.author },
-  publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: `${site.url}/og/default.svg` } },
+  author:
+    post.author === site.name || post.author === site.legacyName
+      ? { '@type': 'Organization', name: site.name, url: site.url }
+      : { '@type': 'Person', name: post.author },
+  publisher: {
+    '@type': 'Organization',
+    '@id': `${site.url}/#organization`,
+    name: site.name,
+    logo: { '@type': 'ImageObject', url: `${site.url}/hero/towing-townsville.png` },
+  },
   mainEntityOfPage: `${site.url}/blog/${post.slug}`,
 });
 

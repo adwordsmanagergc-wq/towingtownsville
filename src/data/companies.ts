@@ -2,35 +2,6 @@ import type { TowingCompany } from '@/types';
 
 export const companies: TowingCompany[] = [
   {
-    slug: 'abc-towing',
-    name: 'ABC Towing Services',
-    logoSrc: '/recommended/abc-towing.svg',
-    websiteUrl: 'https://www.abcctowingservices.com/',
-    phone: '07 4775 5561',
-    townsvilleBased: true,
-    available247: true,
-    services: [
-      'heavy-haulage-towing',
-      'tilt-tray-towing',
-      'accident-towing',
-      'breakdown-towing',
-      'machinery-and-equipment-transport',
-      'interstate-and-long-distance-towing',
-    ],
-    badges: ['Heavy Recovery', 'Tilt Tray', 'Online Bookings', 'Email & Call 24/7', 'Townsville-Based'],
-    shortPitch:
-      'A Townsville-based operator running heavy recovery rigs and tilt-tray trucks across North Queensland. ABC Towing is the team we point people to when the job is bigger than a passenger car — prime movers, heavy machinery and large-vehicle recoveries handled by crews who know the gear and know the region.',
-    whyRecommended:
-      'ABC Towing Services is one of the few Townsville operators with serious heavy-recovery capacity alongside a standard tilt-tray fleet. They publish booking, email and phone contact channels openly and operate across North Queensland — useful when the job is bigger than a single sedan or needs a long-distance leg out of town. They are locally based, so they understand the highways, suburbs and yards where most Townsville recoveries actually happen.',
-    fleet: 'Heavy recovery, tilt tray, accident & breakdown rigs',
-    responseTime: 'On-call 24/7, Townsville metro priority',
-    insuranceApproved: true,
-    pricingTransparency: 'Quote on call',
-    reviewsSummary: 'Local operator with strong word-of-mouth in the heavy-vehicle and trade community',
-    cardHeadline: "ABC Towing Services — Townsville's Heavy Tow Specialists",
-    bestFitFor: 'Heavy vehicles, large-vehicle recoveries, planned/booked jobs',
-  },
-  {
     slug: 'kwiktow-nq',
     name: 'Kwiktow NQ',
     logoSrc: '/recommended/kwiktow.svg',
@@ -66,6 +37,35 @@ export const companies: TowingCompany[] = [
     reviewsSummary: 'Consistent positive feedback for fast 24/7 response and damage-free tilt-tray work',
     cardHeadline: "Kwiktow NQ — Townsville's Fastest 24/7 Towing & Recovery",
     bestFitFor: 'Round-the-clock accident, breakdown and multi-service jobs across NQ',
+  },
+  {
+    slug: 'abc-towing',
+    name: 'ABC Towing Services',
+    logoSrc: '/recommended/abc-towing.svg',
+    websiteUrl: 'https://www.abcctowingservices.com/',
+    phone: '07 4775 5561',
+    townsvilleBased: true,
+    available247: true,
+    services: [
+      'heavy-haulage-towing',
+      'tilt-tray-towing',
+      'accident-towing',
+      'breakdown-towing',
+      'machinery-and-equipment-transport',
+      'interstate-and-long-distance-towing',
+    ],
+    badges: ['Heavy Recovery', 'Tilt Tray', 'Online Bookings', 'Email & Call 24/7', 'Townsville-Based'],
+    shortPitch:
+      'A Townsville-based operator running heavy recovery rigs and tilt-tray trucks across North Queensland. ABC Towing is the team we point people to when the job is bigger than a passenger car — prime movers, heavy machinery and large-vehicle recoveries handled by crews who know the gear and know the region.',
+    whyRecommended:
+      'ABC Towing Services is one of the few Townsville operators with serious heavy-recovery capacity alongside a standard tilt-tray fleet. They publish booking, email and phone contact channels openly and operate across North Queensland — useful when the job is bigger than a single sedan or needs a long-distance leg out of town. They are locally based, so they understand the highways, suburbs and yards where most Townsville recoveries actually happen.',
+    fleet: 'Heavy recovery, tilt tray, accident & breakdown rigs',
+    responseTime: 'On-call 24/7, Townsville metro priority',
+    insuranceApproved: true,
+    pricingTransparency: 'Quote on call',
+    reviewsSummary: 'Local operator with strong word-of-mouth in the heavy-vehicle and trade community',
+    cardHeadline: "ABC Towing Services — Townsville's Heavy Tow Specialists",
+    bestFitFor: 'Heavy vehicles, large-vehicle recoveries, planned/booked jobs',
   },
 ];
 

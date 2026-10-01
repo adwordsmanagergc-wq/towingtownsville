@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { services } from '@/data/services';
 import { RecommendedCompaniesBlock } from '@/components/RecommendedCompaniesBlock';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { CallButtons } from '@/components/CallButtons';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
@@ -36,6 +37,7 @@ export default function ServicesHubPage() {
             From a flat tyre on the Ring Road to a prime mover on the Bruce Highway — pick the
             service closest to your situation.
           </p>
+          <CallButtons className="mt-7" />
         </div>
       </section>
 

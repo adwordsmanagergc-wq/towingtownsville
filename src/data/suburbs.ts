@@ -1,12 +1,19 @@
-import type { Suburb } from '@/types';
+import type { Suburb, SuburbRegion } from '@/types';
+import { innerSuburbs } from './suburbs/inner';
+import { centralSuburbs } from './suburbs/central';
+import { southSuburbs } from './suburbs/south';
+import { westSuburbs } from './suburbs/west';
+import { northernBeachesSuburbs } from './suburbs/northern-beaches';
+import { ruralNorthSuburbs } from './suburbs/rural-north';
 
-export const suburbs: Suburb[] = [
+export const coreSuburbs: Suburb[] = [
   {
     slug: 'aitkenvale',
     name: 'Aitkenvale',
-    metaTitle: 'Aitkenvale Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4814',
+    region: 'central',
     metaDescription:
-      'Need a tow truck in Aitkenvale? See the towing companies we recommend for accident, breakdown and 24/7 recovery in Aitkenvale, Townsville.',
+      "Need a tow truck in Aitkenvale? 24/7 towing across Aitkenvale 4814 — shopping-centre carparks, Ross River Road bingles & breakdowns. Call a local operator.",
     intro:
       "Aitkenvale is the commercial heart of central Townsville and one of the busiest postcodes in the city for tow truck callouts. The Charters Towers Road spine runs north-south through the suburb, intersecting with Ross River Road and Nathan Street to create some of Townsville's busiest signalised intersections — and a steady supply of nose-to-tail bingles in afternoon peak. Stockland Townsville, Hyde Park Castletown and the broader retail strip pull thousands of vehicles through the suburb every day, which generates its own pattern of carpark prangs, dead-battery callouts after long shopping trips, and the occasional kerb-hit on the way out of an underground bay. The recommended Townsville operators on this site cover Aitkenvale around the clock with tilt-tray rigs that can clear standard shopping-centre ceilings, handle prestige SUVs on soft straps, and recover non-running vehicles from the back of a busy carpark without blocking the rest of the bays. After dark, Charters Towers Road through Aitkenvale picks up its share of Friday and Saturday night roadside callouts — late-night taxi-rank breakdowns, lockouts at the bars and a steady flow of jump-starts after long weekends. Aitkenvale is also the natural gateway between the CBD and the southern suburbs, so cross-metro tows pass through here constantly.",
     jobs: [
@@ -16,7 +23,7 @@ export const suburbs: Suburb[] = [
       'Late-night roadside callouts near the bars and venues along Charters Towers Road',
       'Underground-carpark recoveries from low-clearance bays at the retail centres',
     ],
-    neighbouring: ['hermit-park', 'mount-louisa', 'kirwan', 'idalia'],
+    neighbouring: ['mundingburra', 'vincent', 'cranbrook', 'hermit-park', 'mysterton', 'kirwan'],
     faqs: [
       {
         q: 'How fast can a tow truck reach Aitkenvale during afternoon peak?',
@@ -43,9 +50,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'kirwan',
     name: 'Kirwan',
-    metaTitle: 'Kirwan Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4817',
+    region: 'west',
     metaDescription:
-      'Need a tow truck in Kirwan? See the towing companies we recommend for accident, breakdown and 24/7 recovery in Kirwan and Thuringowa.',
+      "Tow truck Kirwan, 24/7 — towing across Kirwan 4817 and Thuringowa for breakdowns, flat batteries, bingles and caravan moves. Call a recommended Townsville tow.",
     intro:
       "Kirwan is one of the largest residential suburbs in greater Townsville and sits at the western edge of the city's daily commute. Riverway Drive is the spine, with shopping strips, sporting facilities and the surrounding school catchments pulling a steady flow of family vehicles through every weekday. The result is a pattern of tow callouts that's quite different from inner Townsville: school-run flat batteries on hot mornings, family-vehicle breakdowns on residential side streets, blown tyres in Riverway Drive's potholed sections after the wet, and the occasional bingle on the busier Kirwan roundabouts. The recommended Townsville tow operators cover Kirwan as part of their core metro footprint, with tilt-tray rigs that can clear suburban driveways, handle dual-cab utes loaded with trade gear, and recover AWD family vehicles without driveline damage. Kirwan also hosts a meaningful number of caravan and boat-trailer storage yards, so trailer-only tows and recoveries are more common here than in central Townsville — particularly through the cooler months when grey-nomads are loading up for trips north. After hours, Kirwan's residential streets see the usual breakdown profile (won't-start vehicles, dead batteries after long weekends) plus the late-night callouts that drift west from the Thuringowa Central retail precinct.",
     jobs: [
@@ -55,7 +63,7 @@ export const suburbs: Suburb[] = [
       'Caravan and boat-trailer moves between Kirwan storage yards and front-yard parking',
       'Tyre damage from potholes after wet-season rain on Riverway Drive',
     ],
-    neighbouring: ['thuringowa-central', 'condon', 'mount-louisa', 'aitkenvale'],
+    neighbouring: ['thuringowa-central', 'condon', 'kelso', 'rasmussen', 'cranbrook', 'mount-louisa'],
     faqs: [
       {
         q: 'How long does a tow take to reach Kirwan from central Townsville?',
@@ -82,9 +90,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'garbutt',
     name: 'Garbutt',
-    metaTitle: 'Garbutt Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4814',
+    region: 'central',
     metaDescription:
-      'Need a tow truck in Garbutt? See the towing companies we recommend for breakdown, airport and industrial-area towing in Garbutt, Townsville.',
+      "Tow truck Garbutt, 24/7 — towing from Townsville Airport carparks, industrial yards and workshops across Garbutt 4814. Call a recommended Townsville operator.",
     intro:
       "Garbutt sits north-west of the Townsville CBD and packs more variety into one postcode than almost any other suburb in the city. Townsville Airport occupies one corner, the Bayswater and Ingham Road light-industrial estates dominate another, and a residential pocket runs along the suburb's quieter streets. That mix produces an unusual tow-callout profile: long-stay airport carparks where batteries have quietly died over a week away, fleet vehicle breakdowns at the back of industrial yards, after-hours warehouse callouts when a forklift or delivery van won't start, and the occasional single-vehicle incident on the Ring Road approach where the closest exit drops into Garbutt. Many of the city's mechanics, auto-electricians and tyre shops are based here too, which means a high proportion of cross-metro tows finish in Garbutt — the workshop strip is the natural destination once a vehicle has been recovered. The recommended Townsville operators cover Garbutt 24/7 with tilt-tray, heavy-recovery and machinery options, and most run accounts for the larger fleet customers in the industrial estates. The airport carpark side of the suburb gets its own steady stream of jump-start and tyre callouts, particularly through summer when heat-stressed batteries on returning long-stay vehicles refuse to crank.",
     jobs: [
@@ -94,7 +103,7 @@ export const suburbs: Suburb[] = [
       'Single-vehicle incidents on the Ring Road approach exiting into Garbutt',
       'Tows from accident scenes back into the Garbutt workshop strip',
     ],
-    neighbouring: ['mount-louisa', 'aitkenvale', 'hermit-park', 'west-end'],
+    neighbouring: ['mount-louisa', 'heatley', 'west-end', 'rowes-bay', 'hyde-park', 'bohle'],
     faqs: [
       {
         q: 'Can a tow truck reach me at Townsville Airport long-stay carpark?',
@@ -121,9 +130,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'idalia',
     name: 'Idalia',
-    metaTitle: 'Idalia Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4811',
+    region: 'south',
     metaDescription:
-      'Need a tow truck in Idalia? See the towing companies we recommend for breakdown, accident and 24/7 recovery in Idalia, Townsville.',
+      "Need a tow truck in Idalia? 24/7 towing across Idalia 4811 and the Townsville riverside — breakdowns, accidents and tilt tray. Call a recommended local tow.",
     intro:
       "Idalia is one of Townsville's newer master-planned suburbs, sitting on the south side of Ross River and connected back to the CBD via the Hugh Street corridor and a series of larger roundabouts. The suburb skews heavily toward family vehicles, prestige SUVs and the kind of three-car-garage households that occasionally produce a Monday-morning dead-battery surprise. The newer street layout means access is generally good for tow trucks — wide kerbs, easy turning circles, and driveways that fit a tilt tray without the access dramas you sometimes get in older Townsville pockets. The pattern of callouts reflects the demographics: prestige and luxury vehicle tows where damage-free tilt-tray loading actually matters, EV tows where driveline rotation has to be avoided, after-school carpark callouts at the local shopping precincts, and the occasional bingle at the busy Hugh Street roundabouts where through-traffic from Oonoonba meets locals heading to the CBD. Wet-season storms can put the lower-lying south side of Idalia under water briefly, which leads to the occasional flood-related callout — vehicles that have been pushed into water are a tow-and-don't-restart situation. The recommended Townsville tow operators cover Idalia 24/7 with tilt-tray rigs that suit prestige loads.",
     jobs: [
@@ -133,7 +143,7 @@ export const suburbs: Suburb[] = [
       'EV tows requiring tilt-tray transport with no driveline rotation',
       'Wet-season flood-related callouts on the lower-lying south side of the suburb',
     ],
-    neighbouring: ['oonoonba', 'hermit-park', 'aitkenvale', 'mount-louisa'],
+    neighbouring: ['oonoonba', 'cluden', 'rosslea', 'mundingburra', 'annandale'],
     faqs: [
       {
         q: 'Can a prestige SUV be towed without panel damage?',
@@ -160,9 +170,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'hermit-park',
     name: 'Hermit Park',
-    metaTitle: 'Hermit Park Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4812',
+    region: 'central',
     metaDescription:
-      'Need a tow truck in Hermit Park? See the towing companies we recommend for breakdown, accident and roadside callouts in Hermit Park, Townsville.',
+      "Tow truck Hermit Park, 24/7 — towing in Hermit Park 4812, central Townsville. Breakdown, accident and tilt tray tows to your mechanic. Call a local operator.",
     intro:
       "Hermit Park sits between the CBD and Aitkenvale and is one of the tighter residential grids in Townsville — narrow side streets, older Queenslander housing on small blocks, and a constant flow of through-traffic on the Charters Towers Road spine that splits the suburb. That mix of older street layout and busy arterial produces a particular tow-callout pattern: residential breakdowns where the vehicle is wedged between fences and the kerb, carpark scrapes at the smaller Hermit Park retail strips, and a steady share of Charters Towers Road through-traffic incidents that need to be cleared before they back up the lights at Aitkenvale or the CBD. The suburb also has a higher proportion of older project cars and unregistered vehicles being moved between sheds than the average Townsville postcode — Hermit Park is a popular postcode for the weekend-mechanic crowd, and tilt-tray tows between two private addresses are a regular booking. After dark, Hermit Park is quiet residentially but the Charters Towers Road traffic continues, so the late-night callouts here are usually highway-style breakdowns rather than residential ones. The recommended Townsville tow operators cover Hermit Park as part of the central metro footprint with 24/7 tilt-tray availability and access to the tight inner streets that some operators struggle with.",
     jobs: [
@@ -172,7 +183,7 @@ export const suburbs: Suburb[] = [
       'Carpark scrapes at the smaller Hermit Park retail strips',
       'Driveway recoveries where a vehicle has been wedged between fences and the kerb',
     ],
-    neighbouring: ['aitkenvale', 'idalia', 'north-ward', 'west-end'],
+    neighbouring: ['hyde-park', 'rosslea', 'mysterton', 'pimlico', 'railway-estate', 'aitkenvale'],
     faqs: [
       {
         q: 'How quickly can a tow truck reach Hermit Park?',
@@ -199,9 +210,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'north-ward',
     name: 'North Ward',
-    metaTitle: 'North Ward Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4810',
+    region: 'inner',
     metaDescription:
-      'Need a tow truck in North Ward? See the towing companies we recommend for breakdown, accident and Strand-side recovery in North Ward, Townsville.',
+      "Need a tow truck in North Ward? 24/7 towing for North Ward 4810 near The Strand and Townsville CBD — apartments, tight streets, tilt tray. Call now.",
     intro:
       "North Ward wraps around the lower slopes of Castle Hill and stretches down to The Strand, making it one of the most distinctive postcodes in Townsville for tow-callout patterns. The Castle Hill side of the suburb has narrow, steeply-graded streets where access matters and tilt-tray turning arcs need to be planned carefully. The Strand side picks up beachfront-event traffic, café-strip parking pressure and the kind of foreshore-carpark dead-battery callouts that get worse the longer the day in the sun has been. In between, North Ward is dense with older established Townsville housing — heritage Queenslanders, brick walk-ups and a higher-than-average density of apartment blocks near the beach. That gives the suburb its own profile: apartment-block batteries that haven't turned over since the last weekend trip, tight-street incidents on the Castle Hill drive where a slow-speed kerb hit is enough to bend a steering arm, and the after-event roadside callouts that come once major Strand events stage traffic out of the foreshore carparks. The recommended Townsville tow operators cover North Ward 24/7, with drivers experienced enough on the Castle Hill streets to keep light-bar use to a minimum on quiet residential blocks.",
     jobs: [
@@ -211,7 +223,7 @@ export const suburbs: Suburb[] = [
       "Local café-strip prangs after evening services along The Strand and Gregory Street",
       "Recovery of vehicles that won't start after long beach days at the foreshore carparks",
     ],
-    neighbouring: ['the-strand', 'west-end', 'hermit-park', 'aitkenvale'],
+    neighbouring: ['the-strand', 'belgian-gardens', 'castle-hill', 'townsville-city', 'west-end'],
     faqs: [
       {
         q: 'Can a tilt tray handle the tight streets near Castle Hill?',
@@ -238,9 +250,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'west-end',
     name: 'West End',
-    metaTitle: 'West End Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4810',
+    region: 'inner',
     metaDescription:
-      'Need a tow truck in West End? See the towing companies we recommend for breakdown, accident and 24/7 recovery in West End, Townsville.',
+      "Tow truck West End, 24/7 — towing across West End 4810 on the Townsville CBD fringe. Breakdowns, accidents and workshop tows. Call a recommended local operator.",
     intro:
       "West End sits just inland from the Townsville CBD and combines residential streets with a meaningful slice of light industrial and service businesses. The Bowen Road and Ingham Road corridors run through the suburb, both of them busy enough during peak that even a slow-speed bingle backs traffic up to the lights at either end. The mix of through-traffic and local trades — workshops, signwriters, equipment hire yards, smaller fabrication shops — produces a tow callout profile that reads halfway between Garbutt and the CBD. Common jobs include light-industrial fleet vehicle breakdowns on a Monday morning, residential-street battery and lockout callouts in the older brick housing stock, and the occasional crash recovery on the Bowen / Ingham junction in afternoon peak. West End is also a natural staging point for tows heading into the CBD from the Ring Road, which means a high proportion of cross-metro jobs pass through the suburb even when the breakdown itself is somewhere else. The recommended Townsville tow operators cover West End around the clock with tilt-tray, heavy-vehicle and machinery options, and most can handle yard-to-yard moves for the equipment-hire businesses along Bowen Road.",
     jobs: [
@@ -250,7 +263,7 @@ export const suburbs: Suburb[] = [
       'Late-night tows from West End venues and trade shifts',
       'Yard-to-yard moves of equipment between the light-industrial sites',
     ],
-    neighbouring: ['north-ward', 'garbutt', 'mount-louisa', 'hermit-park'],
+    neighbouring: ['townsville-city', 'north-ward', 'belgian-gardens', 'hyde-park', 'garbutt', 'castle-hill'],
     faqs: [
       {
         q: 'How fast can a tow truck reach West End?',
@@ -277,9 +290,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'mount-louisa',
     name: 'Mount Louisa',
-    metaTitle: 'Mount Louisa Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4814',
+    region: 'west',
     metaDescription:
-      'Need a tow truck in Mount Louisa? See the towing companies we recommend for breakdown, accident and 24/7 recovery in Mount Louisa, Townsville.',
+      "Need a tow truck in Mount Louisa? 24/7 towing across Mount Louisa 4814, Townsville — steep driveways, breakdowns and accidents. Call a recommended operator.",
     intro:
       "Mount Louisa is one of the larger residential pockets north-west of the Townsville CBD and is well placed for access to both Townsville Airport and the industrial estates around Garbutt. The suburb skews family-residential, with a mix of older brick housing and newer estates closer to the bush block edge. That positioning produces a tow-callout pattern with three distinct sources: the everyday family-vehicle breakdowns on a hot morning, the occasional 4WD recovery off the bush tracks at the back of the suburb where dual-cabs go for weekend runs, and the Ring Road bingles where the closest exit drops drivers into Mount Louisa rather than Garbutt or Condon. The proximity to the Ring Road also means Mount Louisa picks up its share of long-distance breakdown handoffs — vehicles that have made it as far as the city limits before something gave up. The recommended Townsville tow operators cover Mount Louisa 24/7 with tilt-tray, 4WD recovery and roadside options. Local drivers familiar with the suburb know which back-track access roads need a 4WD recovery rig versus a standard tilt tray, and the operator will dispatch the right gear if you describe the access on the call.",
     jobs: [
@@ -289,7 +303,7 @@ export const suburbs: Suburb[] = [
       'Ring Road bingles where the closest exit drops into Mount Louisa',
       'Long-distance breakdown handoffs at the metro fringe',
     ],
-    neighbouring: ['garbutt', 'kirwan', 'aitkenvale', 'condon'],
+    neighbouring: ['heatley', 'garbutt', 'kirwan', 'thuringowa-central', 'bohle', 'mount-st-john'],
     faqs: [
       {
         q: 'Can a tow truck reach the back-track area behind Mount Louisa?',
@@ -316,9 +330,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'thuringowa-central',
     name: 'Thuringowa Central',
-    metaTitle: 'Thuringowa Central Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4817',
+    region: 'west',
     metaDescription:
-      'Need a tow truck in Thuringowa Central? See the towing companies we recommend for breakdown, accident and 24/7 recovery in Thuringowa.',
+      "Tow truck Thuringowa Central, 24/7 — towing along Riverway Drive and the Thuringowa retail precinct, Townsville 4817. Call a recommended local operator.",
     intro:
       "Thuringowa Central is the western centre of gravity for the greater Townsville metro and one of the busiest non-CBD postcodes in the city. The Riverway precinct anchors the suburb, with a major shopping strip, council facilities, sporting venues and the Riverway parklands all concentrated within a kilometre of each other. The result is a high daily traffic volume in a small area, and a tow callout pattern that reads more like inner-city than outer-suburban. Common jobs here include family carpark bingles in the Riverway shopping centres, kerb-hit and tyre damage on Riverway Drive's longer stretches, late-night residential breakdowns in the surrounding streets after weekend events at the parklands, and the cross-metro tows that pass through Thuringowa on the way from Kirwan and Condon into central Townsville. The recommended Townsville tow operators cover Thuringowa Central around the clock with tilt-tray, heavy and roadside options. The wider Thuringowa area also hosts several caravan and trailer storage yards, so trailer-only moves and recoveries are more common here than in central Townsville — particularly through the cooler months when storage units are loaded for trips north.",
     jobs: [
@@ -328,7 +343,7 @@ export const suburbs: Suburb[] = [
       'Caravan and boat-trailer moves between Thuringowa storage yards',
       'Cross-metro tows passing through from Kirwan and Condon into central Townsville',
     ],
-    neighbouring: ['kirwan', 'condon', 'mount-louisa', 'aitkenvale'],
+    neighbouring: ['kirwan', 'condon', 'mount-louisa', 'bohle-plains', 'rasmussen', 'ring-road'],
     faqs: [
       {
         q: 'How fast can a tow truck reach Thuringowa Central?',
@@ -355,9 +370,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'oonoonba',
     name: 'Oonoonba',
-    metaTitle: 'Oonoonba Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4811',
+    region: 'south',
     metaDescription:
-      'Need a tow truck in Oonoonba? See the towing companies we recommend for breakdown, accident and 24/7 recovery in Oonoonba, Townsville.',
+      "Need a tow truck in Oonoonba? 24/7 towing across Oonoonba 4811, south Townsville — breakdowns, accidents, trailers and tilt tray. Call a recommended operator.",
     intro:
       "Oonoonba sits just south of the Townsville CBD across the Ross River and shares its main access routes with Idalia and the south-side industrial pockets. The suburb is a mix of older residential, smaller industrial sites and the bridge corridors that connect southern Townsville back to the city. That layout produces a particular tow callout pattern: bridge and roundabout incidents at the Ross River crossings, light-industrial fleet vehicle breakdowns at the smaller workshops dotted through the suburb, residential-street battery and lockout callouts in the older housing, and a steady share of boat-trailer recoveries from drivers heading back from the southern ramps. The Ross River bridges themselves are a hotspot for slow-speed bingles in afternoon peak, partly because traffic from Idalia, Oonoonba and the southern suburbs all converges on the same crossings before splitting again on the CBD side. The recommended Townsville tow operators cover Oonoonba as part of the central metro 24/7, with tilt-tray, trailer-tow and heavy options available. Wet-season storms occasionally flood the lower-lying parts of the suburb, so flood-related callouts are part of the pattern in February and March.",
     jobs: [
@@ -367,7 +383,7 @@ export const suburbs: Suburb[] = [
       'Boat-trailer recovery on the way back from southern Townsville ramps',
       'Wet-season flood-related callouts in the lower-lying parts of the suburb',
     ],
-    neighbouring: ['idalia', 'aitkenvale', 'hermit-park', 'condon'],
+    neighbouring: ['idalia', 'cluden', 'wulguru', 'south-townsville', 'stuart'],
     faqs: [
       {
         q: 'How fast can a tow truck reach Oonoonba?',
@@ -394,9 +410,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'condon',
     name: 'Condon',
-    metaTitle: 'Condon Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4815',
+    region: 'west',
     metaDescription:
-      'Need a tow truck in Condon? See the towing companies we recommend for breakdown, accident and 24/7 recovery in Condon, Townsville.',
+      "Tow truck Condon, 24/7 — towing across Condon 4815 and Thuringowa, Townsville. Breakdowns, flat batteries, bingles and tilt tray. Call a recommended operator.",
     intro:
       "Condon is one of the larger western residential suburbs of greater Townsville, sitting on the western edge of the Thuringowa precinct with bush-block access roads at its back fence. The suburb skews family-residential with larger lots, more sheds and a higher proportion of dual-cab utes, caravans and boat trailers parked at home than the inner-Townsville average. That gives Condon a tow callout pattern that's heavier on roadside work and lighter on accident traffic than the central suburbs: school-run battery failures on hot mornings, driveway breakdowns after weekend trips, light off-road recoveries when a 4WD has bogged on the back-block tracks, and trailer-only moves between front-yard parking and storage. The Ring Road is reachable from Condon in a few minutes, which means a meaningful share of cross-metro tows pass through the suburb on the way out to Charters Towers or south on the Bruce Highway. The recommended Townsville tow operators cover Condon as part of the broader Townsville metro footprint 24/7, with 4WD recovery available on top of the standard tilt-tray and roadside options.",
     jobs: [
@@ -406,7 +423,7 @@ export const suburbs: Suburb[] = [
       'Caravan and boat-trailer moves between Condon storage and front-yard parking',
       'Cross-metro tows passing through to the Ring Road and Bruce Highway',
     ],
-    neighbouring: ['kirwan', 'thuringowa-central', 'mount-louisa', 'aitkenvale'],
+    neighbouring: ['kirwan', 'rasmussen', 'kelso', 'thuringowa-central', 'bohle-plains', 'ring-road'],
     faqs: [
       {
         q: 'How long does a Condon tow callout usually take?',
@@ -433,9 +450,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'the-strand',
     name: 'The Strand',
-    metaTitle: 'The Strand Tow Truck | 24/7 Towing — Townsville Towing Compare',
+    postcode: '4810',
+    region: 'inner',
     metaDescription:
-      'Need a tow truck on The Strand? See the towing companies we recommend for breakdown, accident and roadside recovery on The Strand, Townsville.',
+      "Need a tow truck on The Strand? 24/7 towing along The Strand foreshore, Townsville 4810 — carpark breakdowns, flat batteries & event days. Call now.",
     intro:
       "The Strand is Townsville's beachfront strip and one of the busiest event-and-tourism corridors in the city. The foreshore stretches roughly two and a half kilometres along the coast, with parkland, pools, restaurants, the rock pool, the pier and the bigger event spaces all concentrated in a narrow ribbon. That positioning gives The Strand a very specific tow callout profile: foreshore carpark dead batteries after long beach days in the sun, tyre damage from kerb hits along the parking bays where drivers misjudge the angle, after-event breakdowns when traffic is staged out of the bigger foreshore carparks during festivals and markets, and the café-strip prangs that come from heavy weekend turnover. Wet-season storms can flood the foreshore briefly, but it's the heat and the sustained sun exposure that does most of the real damage to vehicles parked along The Strand for hours. The recommended Townsville tow operators cover The Strand around the clock and know the tighter access points, the event-staging routes when foreshore traffic is restricted, and the parking-bay angles where a tilt-tray can load without disturbing neighbouring vehicles.",
     jobs: [
@@ -445,7 +463,7 @@ export const suburbs: Suburb[] = [
       'Café-strip prangs in heavy weekend traffic along Gregory Street',
       'Wet-season tow-aways from briefly flooded foreshore sections',
     ],
-    neighbouring: ['north-ward', 'west-end', 'hermit-park', 'magnetic-island'],
+    neighbouring: ['north-ward', 'townsville-city', 'belgian-gardens', 'rowes-bay', 'magnetic-island'],
     faqs: [
       {
         q: 'How fast can a tow truck reach The Strand?',
@@ -472,9 +490,10 @@ export const suburbs: Suburb[] = [
   {
     slug: 'magnetic-island',
     name: 'Magnetic Island',
-    metaTitle: 'Magnetic Island Tow Truck | Vehicle Recovery — Townsville Towing Compare',
+    postcode: '4819',
+    region: 'island-highway',
     metaDescription:
-      'Need a tow truck for Magnetic Island? See the operators we recommend for vehicle recovery to and from the Magnetic Island ferry, Townsville.',
+      "Tow truck for Magnetic Island trips — ferry-terminal breakdowns and car-ferry vehicle moves to Townsville workshops. 24/7 recommended Townsville operators.",
     intro:
       "Magnetic Island is its own logistical situation when it comes to towing. The island sits an eight-kilometre ferry trip off Townsville and has no road connection to the mainland — vehicles travel across by the SeaLink vehicle ferry to and from Nelly Bay, and any tow involving an island-side vehicle has to plan around the ferry schedule. Common callouts split into three buckets. First, vehicles waiting at the Townsville ferry terminal that won't start when their owner returns — usually flat batteries after a couple of days parked in the sun. Second, mainland-side recovery for vehicles that have just come back from the island and broken down on the run home. Third, coordination of vehicle-ferry timing for non-running vehicles that need to be shifted between the island and a mainland workshop, which depends on the ferry operator accepting the load on the day. The recommended Townsville tow operators handle the mainland side of all of these and can advise on the timing — vehicle-ferry slots are not always immediately available, and a non-running vehicle on a busy day may take longer to coordinate than a drivable one.",
     jobs: [
@@ -484,7 +503,7 @@ export const suburbs: Suburb[] = [
       'Pre-trip pickup of project cars being ferried across',
       'Tow-back from the ferry terminal to a mainland workshop or storage yard',
     ],
-    neighbouring: ['the-strand', 'north-ward', 'west-end', 'aitkenvale'],
+    neighbouring: ['the-strand', 'townsville-city', 'south-townsville', 'north-ward'],
     faqs: [
       {
         q: 'Can a tow truck cross to Magnetic Island?',
@@ -511,9 +530,9 @@ export const suburbs: Suburb[] = [
   {
     slug: 'ring-road',
     name: 'Ring Road',
-    metaTitle: 'Ring Road Tow Truck | Highway Recovery — Townsville Towing Compare',
+    region: 'island-highway',
     metaDescription:
-      'Broken down on the Townsville Ring Road? See the towing companies we recommend for highway recovery on the Ring Road and Bruce Highway approaches.',
+      "Broken down on the Townsville Ring Road? 24/7 tow truck for Ring Road breakdowns, accidents and heavy vehicles from Douglas to the Bruce Highway. Call now.",
     intro:
       "The Townsville Ring Road and the Bruce Highway approaches make up the city's highest-volume corridor for breakdown and accident callouts. The Ring Road itself loops the metro from Mount Louisa around through Douglas to the south of Townsville, with the Bruce Highway joining it at either end. Long stretches at 80–100 km/h, narrow shoulders in some sections, wet-season run-offs after storms, and a steady flow of heavy vehicles all contribute to the callout pattern. Common jobs here include side-wall blowouts at speed where a kerb or shoulder hit has ended a tyre, single-vehicle run-offs after monsoon rain on greasy bitumen, long-distance breakdowns south of Townsville on the Bruce where the driver has pushed too long after a fault appeared, heavy-vehicle recoveries from the freight traffic that passes through Townsville daily, and out-of-fuel callouts where the distance between service stations caught a driver out. The recommended Townsville tow operators cover the Ring Road 24/7 with full safety lighting, traffic-management awareness, and the right rigs for highway-shoulder work — including heavy underlift capacity for prime-mover and rigid-truck recoveries.",
     jobs: [
@@ -523,7 +542,7 @@ export const suburbs: Suburb[] = [
       'Heavy-vehicle recovery on Ring Road and Bruce Highway approaches',
       'Out-of-fuel callouts where service-station gaps caught a driver out',
     ],
-    neighbouring: ['mount-louisa', 'condon', 'thuringowa-central', 'garbutt'],
+    neighbouring: ['douglas', 'mount-louisa', 'kirwan', 'condon', 'bohle-plains', 'shaw'],
     faqs: [
       {
         q: 'How long does a Ring Road callout take?',
@@ -548,6 +567,63 @@ export const suburbs: Suburb[] = [
     ],
   },
 ];
+
+export const suburbs: Suburb[] = [
+  ...coreSuburbs,
+  ...innerSuburbs,
+  ...centralSuburbs,
+  ...southSuburbs,
+  ...westSuburbs,
+  ...northernBeachesSuburbs,
+  ...ruralNorthSuburbs,
+];
+
+// Display order + copy for grouping suburbs on hub pages, the footer and the
+// home page. Labels double as keyword-bearing H2s ("Tow truck … Townsville").
+export const suburbRegions: { key: SuburbRegion; label: string; blurb: string }[] = [
+  {
+    key: 'inner',
+    label: 'Townsville CBD & inner city',
+    blurb: 'CBD, The Strand, North Ward, South Townsville and the Castle Hill fringe.',
+  },
+  {
+    key: 'central',
+    label: 'Central Townsville',
+    blurb: 'Aitkenvale, Hermit Park, Mundingburra, Garbutt and the Ross River Road corridor.',
+  },
+  {
+    key: 'south',
+    label: 'Southern Townsville',
+    blurb: 'Douglas, Annandale, Idalia, Wulguru, Stuart and the Bruce Highway south.',
+  },
+  {
+    key: 'west',
+    label: 'Thuringowa & western suburbs',
+    blurb: 'Kirwan, Condon, Kelso, Rasmussen, Bohle and the Hervey Range acreage.',
+  },
+  {
+    key: 'northern-beaches',
+    label: 'Northern Beaches',
+    blurb: 'Burdell, Deeragun, Bushland Beach, Mount Low, Jensen and Shaw.',
+  },
+  {
+    key: 'rural-north',
+    label: 'Northern coast & rural',
+    blurb: 'Bluewater, Saunders Beach, Rollingstone, Balgal Beach and the Bruce Highway north.',
+  },
+  {
+    key: 'island-highway',
+    label: 'Magnetic Island & highways',
+    blurb: 'Magnetic Island barge recoveries and the Townsville Ring Road.',
+  },
+];
+
+export const suburbsByRegion = suburbRegions.map((r) => ({
+  ...r,
+  suburbs: suburbs
+    .filter((s) => s.region === r.key)
+    .sort((a, b) => a.name.localeCompare(b.name)),
+}));
 
 export const getSuburb = (slug: string) =>
   suburbs.find((s) => s.slug === slug)!;

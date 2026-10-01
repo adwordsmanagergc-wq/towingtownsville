@@ -10,7 +10,7 @@ export const allBlogPosts: BlogPost[] = [
     description:
       "Broken down in Townsville? A plain-English run-through of every way cars, utes, trucks, 4WDs, bikes and boat trailers fail in NQ — and how to get a tow truck Townsville locals trust.",
     date: '2026-05-15',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 8,
     faqs: [
       {
@@ -180,7 +180,7 @@ See the **[recommended operators on our home page](/)** for direct contact detai
     description:
       "A local-knowledge guide to Townsville's most accident-prone roads, intersections and seasons — Ring Road merges, Bruce Highway approaches, Charters Towers Road, Hervey Range and the wet-season bingle zones — and what to do if you end up needing a tow.",
     date: '2026-05-12',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 8,
     body: `## Why this guide exists
 
@@ -262,7 +262,7 @@ Both of our [recommended operators](/recommended) cover the suburbs and roads ab
     description:
       "Discover Townsville's top 10 mechanics and why a reliable towing service in Townsville is the unsung hero behind every repair. Local 2026 guide.",
     date: '2026-05-13',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 7,
     faqs: [
       {
@@ -426,7 +426,7 @@ That's why a relationship with a trusted [towing service in Townsville](/) isn't
 
 ## Need a tow?
 
-See the Townsville tow operators we recommend on the [Townsville Towing Compare home page](/) — tilt-tray transport, insurance-approved, and direct delivery to the mechanic of your choice, including every workshop on this list.
+See the Townsville tow operators we recommend on the [Towing Townsville home page](/) — tilt-tray transport, insurance-approved, and direct delivery to the mechanic of your choice, including every workshop on this list.
 
 ## Frequently asked questions
 
@@ -452,7 +452,7 @@ Yes — the reputable operators answer the phone day and night. See [24/7 emerge
     description:
       'A plain-English breakdown of what a tow truck actually costs in Townsville in 2026, from short suburb hops to long-distance and heavy-vehicle work.',
     date: '2026-04-15',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 6,
     body: `## What you will actually pay for a tow in Townsville in 2026
 
@@ -509,7 +509,7 @@ If you want a clean way to compare Townsville tow companies, see our [recommenda
     description:
       "A clear, calm checklist for the first 10 minutes after a crash in Townsville — what to do at the scene, who to call, and how to handle the tow truck conversation.",
     date: '2026-03-26',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 7,
     body: `## The first 10 minutes after an accident
 
@@ -568,7 +568,7 @@ If you want a single number to ring after a Townsville crash, our recommended op
     description:
       'A plain-English explainer of the three main tow truck types — what they do, when they make sense, and which one your Townsville car probably needs.',
     date: '2026-03-09',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 6,
     body: `## Three tow trucks, three different jobs
 
@@ -618,7 +618,7 @@ For a damage-free tilt-tray pickup anywhere in Townsville, see our [recommended 
     description:
       'Practical recovery advice for getting a 4WD out of soft sand, mud or saltwater on Townsville beaches and tracks — and when to stop and call a recovery operator.',
     date: '2026-02-21',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 7,
     body: `## Why Pallarenda and Alva Beach catch people out
 
@@ -678,7 +678,7 @@ There is no shame in calling early. The cost of a bog recovery is small. The cos
     description:
       'A practical guide for truck drivers and fleet managers when a heavy vehicle breaks down on the Bruce Highway near Townsville — what to do, who to call, and how to manage a roadside recovery.',
     date: '2026-02-04',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 6,
     body: `## The Bruce Highway is no place to muddle through
 
@@ -736,7 +736,7 @@ If you operate a heavy vehicle through Townsville regularly, take five minutes n
     description:
       'Wheel-bearing failure, blown trailer tyre or a tow vehicle that has died — what to do when your boat trailer breaks down on the way home from a Townsville ramp.',
     date: '2026-01-19',
-    author: 'Townsville Towing Compare',
+    author: 'Towing Townsville',
     readMinutes: 6,
     body: `## The ramp is fine. The trip home is the problem.
 

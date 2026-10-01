@@ -1,5 +1,20 @@
 import { companies } from '@/data/companies';
-import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+
+// Render "✅ text" cells as an icon + text so the table reads cleanly.
+function Cell({ value }: { value: string }) {
+  if (value === 'Yes' || value.startsWith('✅')) {
+    const rest = value.replace(/^✅\s*(—\s*)?/, '').replace(/^Yes$/, '');
+    return (
+      <span className="inline-flex items-start gap-1.5">
+        <CheckCircle2 className="h-[18px] w-[18px] shrink-0 text-green-600 mt-0.5" aria-label="Yes" />
+        {rest && <span>{rest}</span>}
+      </span>
+    );
+  }
+  return <span>{value}</span>;
+}
 
 const rows = [
   { label: 'Insurance & Licensing', cell: () => 'Fully insured & licensed Townsville operator' },
@@ -49,42 +64,47 @@ const rows = [
 
 export function CompareTable() {
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-100 bg-white shadow-card">
-      <table className="w-full text-sm text-left">
+    <div className="overflow-x-auto rounded-2xl border border-slate-100 bg-white shadow-card">
+      <table className="w-full min-w-[640px] text-sm text-left">
         <caption className="sr-only">
           Side-by-side comparison of recommended Townsville towing companies
         </caption>
-        <thead className="bg-slate-50">
+        <thead className="bg-navy-800 text-white">
           <tr>
-            <th scope="col" className="px-4 py-3 text-navy-900 font-semibold">
+            <th scope="col" className="px-5 py-4 font-semibold w-[28%]">
               Criteria
             </th>
             {companies.map((c) => (
-              <th key={c.slug} scope="col" className="px-4 py-3 text-navy-900 font-semibold">
-                {c.name}
+              <th key={c.slug} scope="col" className="px-5 py-4 font-semibold">
+                <span className="inline-flex items-center gap-2.5">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
+                    <Image src={c.logoSrc} alt="" width={28} height={28} className="h-6 w-6 object-contain" />
+                  </span>
+                  {c.name}
+                </span>
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-              <th scope="row" className="px-4 py-3 font-medium text-navy-800 align-top">
+            <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+              <th scope="row" className="px-5 py-3.5 font-semibold text-navy-900 align-top">
                 {row.label}
               </th>
               {companies.map((c) => (
-                <td key={c.slug} className="px-4 py-3 text-slate-700 align-top">
-                  {row.cell(c.slug)}
+                <td key={c.slug} className="px-5 py-3.5 text-slate-700 align-top">
+                  <Cell value={row.cell(c.slug)} />
                 </td>
               ))}
             </tr>
           ))}
           <tr>
-            <th scope="row" className="px-4 py-3 font-medium text-navy-800">
+            <th scope="row" className="px-5 py-4 font-semibold text-navy-900 border-t border-slate-100">
               Visit site
             </th>
             {companies.map((c) => (
-              <td key={c.slug} className="px-4 py-3">
+              <td key={c.slug} className="px-5 py-4 border-t border-slate-100">
                 <a
                   href={c.websiteUrl}
                   target="_blank"
