@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { PageHero } from '@/components/PageHero';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
@@ -20,13 +20,13 @@ export default function TermsPage() {
           { name: 'Terms', path: '/terms' },
         ])}
       />
-      <section className="bg-navy-800 text-white">
-        <div className="mx-auto max-w-3xl px-4 py-14 md:py-20">
-          <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Terms', href: '/terms' }]} />
-          <h1 className="font-display text-4xl md:text-5xl font-bold">Terms of use.</h1>
-          <p className="mt-4 text-slate-100/85">Last updated: {new Date().toLocaleDateString('en-AU')}</p>
-        </div>
-      </section>
+      <PageHero
+        narrow
+        crumbs={[{ name: 'Home', href: '/' }, { name: 'Terms', href: '/terms' }]}
+        eyebrow="Legal"
+        title="Terms of use."
+        intro={`Last updated: ${new Date().toLocaleDateString('en-AU')}`}
+      />
       <section className="py-14 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 prose-towing">
           <h2>Information only</h2>

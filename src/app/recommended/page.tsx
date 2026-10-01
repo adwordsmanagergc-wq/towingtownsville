@@ -1,21 +1,23 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Clock, DollarSign, Phone, ShieldCheck, Truck } from 'lucide-react';
 import { companies } from '@/data/companies';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { services } from '@/data/services';
+import { PageHero } from '@/components/PageHero';
 import { JsonLd } from '@/components/JsonLd';
-import {
-  breadcrumbSchema,
-  recommendedItemListSchema,
-} from '@/lib/schema';
+import { telHref } from '@/components/CallButtons';
+import { breadcrumbSchema, recommendedItemListSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Recommended Tow Truck Companies in Townsville',
   description:
-    'The two Townsville towing companies we recommend most — ABC Towing Services and Kwiktow NQ — and exactly why each made the list.',
+    'The two Townsville towing companies we recommend most — Kwiktow NQ and ABC Towing Services — and exactly why each made the list.',
   path: '/recommended',
 });
+
+const serviceName = (slug: string) => services.find((s) => s.slug === slug)?.h1.replace(/ in Townsville$/i, '') || slug;
 
 export default function RecommendedPage() {
   return (
@@ -28,80 +30,122 @@ export default function RecommendedPage() {
       />
       <JsonLd data={recommendedItemListSchema(companies)} />
 
-      <section className="bg-navy-800 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-          <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Recommended', href: '/recommended' }]} />
-          <h1 className="font-display text-4xl md:text-5xl font-bold">
-            The Townsville towing companies we recommend most.
-          </h1>
-          <p className="mt-4 text-slate-100/85 max-w-2xl">
-            Two operators, two very different strengths. Here is exactly why each made the list,
-            and what we'd call them for.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-14 md:py-20 bg-white">
-        <div className="mx-auto max-w-3xl px-4 space-y-14">
-          {companies.map((c) => (
-            <article key={c.slug} id={c.slug} className="scroll-mt-24">
-              <p className="text-xs uppercase tracking-[0.25em] text-hivis-600 font-bold">
-                Recommended Operator
-              </p>
-              <h2 className="font-display text-3xl font-bold text-navy-900 mt-2">
-                {c.cardHeadline}
-              </h2>
-              <p className="mt-3 text-slate-700 text-[16px] leading-relaxed">{c.shortPitch}</p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 text-sm">
-                <div>
-                  <p className="font-semibold text-navy-900">Fleet</p>
-                  <p className="text-slate-700">{c.fleet}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-navy-900">Response</p>
-                  <p className="text-slate-700">{c.responseTime}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-navy-900">Insurance-approved</p>
-                  <p className="text-slate-700">{c.insuranceApproved ? 'Yes' : 'No'}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-navy-900">Pricing transparency</p>
-                  <p className="text-slate-700">{c.pricingTransparency}</p>
-                </div>
-                <div className="sm:col-span-2">
-                  <p className="font-semibold text-navy-900">Best fit for</p>
-                  <p className="text-slate-700">{c.bestFitFor}</p>
-                </div>
-                <div className="sm:col-span-2">
-                  <p className="font-semibold text-navy-900">Why we recommend them</p>
-                  <p className="text-slate-700">{c.whyRecommended}</p>
-                </div>
-              </div>
-              <div className="mt-6">
-                <a
-                  href={c.websiteUrl}
-                  target="_blank"
-                  rel="noopener nofollow sponsored"
-                  className="inline-flex items-center gap-2 bg-hivis text-navy-900 font-semibold px-5 py-3 rounded-md hover:bg-hivis-400 transition"
-                >
-                  Visit {c.name} <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </article>
+      <PageHero
+        crumbs={[{ name: 'Home', href: '/' }, { name: 'Recommended', href: '/recommended' }]}
+        eyebrow="Recommended operators"
+        title="The Townsville towing companies we recommend most."
+        intro="Two operators, two very different strengths. Here is exactly why each made the list — and which one to call for your job."
+      >
+        <nav aria-label="Operators" className="mt-7 flex flex-wrap gap-2">
+          {companies.map((c, i) => (
+            <a
+              key={c.slug}
+              href={`#${c.slug}`}
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/15 hover:bg-white/20"
+            >
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-hivis text-[11px] text-navy-900">
+                {i + 1}
+              </span>
+              {c.name}
+            </a>
           ))}
-        </div>
-      </section>
+        </nav>
+      </PageHero>
 
-      <section className="py-10 bg-slate-50">
-        <div className="mx-auto max-w-3xl px-4">
-          <p className="text-xs text-slate-700">
+      <section className="py-12 md:py-16 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 space-y-10">
+          {companies.map((c, i) => {
+            const stats = [
+              { icon: Clock, label: 'Response', value: c.responseTime },
+              { icon: Truck, label: 'Fleet', value: c.fleet },
+              { icon: ShieldCheck, label: 'Insurance-approved', value: c.insuranceApproved ? 'Yes — works with major insurers' : 'No' },
+              { icon: DollarSign, label: 'Pricing', value: c.pricingTransparency },
+            ];
+            return (
+              <article
+                key={c.slug}
+                id={c.slug}
+                className="scroll-mt-24 overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-card"
+              >
+                <div className="flex flex-col gap-5 border-b border-slate-100 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-100">
+                      <Image src={c.logoSrc} alt={`${c.name} logo`} width={56} height={56} className="h-12 w-12 object-contain" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-hivis-600">
+                        Recommendation #{i + 1}
+                      </p>
+                      <h2 className="font-display text-2xl md:text-3xl font-extrabold text-navy-900 leading-tight">
+                        {c.name}
+                      </h2>
+                      <p className="text-sm text-slate-600 mt-0.5">Best for: {c.bestFitFor}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2 sm:flex-row md:flex-col lg:flex-row">
+                    {c.phone && (
+                      <a
+                        href={telHref(c.phone)}
+                        rel="nofollow"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-hivis px-5 py-3 font-bold text-navy-900 hover:bg-hivis-400"
+                      >
+                        <Phone className="h-4 w-4" /> {c.phone}
+                      </a>
+                    )}
+                    <a
+                      href={c.websiteUrl}
+                      target="_blank"
+                      rel="noopener nofollow sponsored"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-navy-800 px-5 py-3 font-semibold text-white hover:bg-navy-700"
+                    >
+                      Visit website <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.4fr_1fr]">
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">Why we recommend them</h3>
+                    <p className="mt-2 text-[15.5px] leading-relaxed text-slate-700">{c.whyRecommended}</p>
+                    <p className="mt-3 text-[15.5px] leading-relaxed text-slate-700">{c.shortPitch}</p>
+
+                    <h3 className="mt-6 font-display text-lg font-bold text-navy-900">Services</h3>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {c.services.map((s) => (
+                        <li key={s}>
+                          <Link
+                            href={`/services/${s}`}
+                            className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-navy-800 hover:border-hivis hover:text-hivis-600"
+                          >
+                            <BadgeCheck className="h-3.5 w-3.5 text-hivis-600" aria-hidden /> {serviceName(s)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <dl className="grid h-max gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                    {stats.map((s) => (
+                      <div key={s.label} className="flex gap-3 rounded-xl bg-slate-50 p-4">
+                        <s.icon className="h-5 w-5 shrink-0 text-hivis-600 mt-0.5" aria-hidden />
+                        <div>
+                          <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">{s.label}</dt>
+                          <dd className="mt-0.5 text-sm font-medium text-navy-900">{s.value}</dd>
+                        </div>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </article>
+            );
+          })}
+
+          <p className="text-xs text-slate-600 max-w-3xl">
             Some recommendations on this site may be sponsored or affiliate placements. We only
-            recommend operators we have personally vetted against our published comparison
-            criteria.{' '}
+            recommend operators we have vetted against our published comparison criteria.{' '}
             <Link href="/compare" className="underline hover:text-hivis-600">
-              See how we compare.
+              See how we compare
             </Link>
+            .
           </p>
         </div>
       </section>
