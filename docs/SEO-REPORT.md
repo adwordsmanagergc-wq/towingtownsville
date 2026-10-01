@@ -1,6 +1,6 @@
 # SEO & Structured Data Coverage Report
 
-Generated against the production build of Townsville Towing Compare.
+Generated against the production build of Towing Townsville (towingtownsville.com).
 This report reflects the current state of the `claude/townsville-towing-site-yPIag`
 branch and should be re-run after any structural change.
 
@@ -8,8 +8,8 @@ branch and should be re-run after any structural change.
 
 | File | Status | Notes |
 | --- | --- | --- |
-| `/sitemap.xml` | ✅ 53 URLs | Auto-generated from `src/app/sitemap.ts`. Includes home, services hub, 18 service pages, suburbs hub, 14 suburb pages, recommended, compare, blog index, 7 blog posts, about, contact, privacy, terms. |
-| `/robots.txt` | ✅ 21 user-agent rules | `*` allowed + 20 explicit AI/search bots (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, Google-Extended, GoogleOther, PerplexityBot, Perplexity-User, Applebot-Extended, Bingbot, CCBot, Amazonbot, meta-externalagent, Bytespider, YouBot, Diffbot, cohere-ai, Mistralai-User). References both `/sitemap.xml` and `/llms.txt`. |
+| `/sitemap.xml` | ✅ 97 URLs | Auto-generated from `src/app/sitemap.ts`. Includes home, services hub, 18 service pages, suburbs hub, 60 suburb pages, recommended, compare, blog index, 9 blog posts, about, contact, privacy, terms. |
+| `/robots.txt` | ✅ 21 user-agent rules | `*` allowed + 20 explicit AI/search bots (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, Google-Extended, GoogleOther, PerplexityBot, Perplexity-User, Applebot-Extended, Bingbot, CCBot, Amazonbot, meta-externalagent, Bytespider, YouBot, Diffbot, cohere-ai, Mistralai-User). References `/sitemap.xml` (llms.txt is linked from nowhere in robots — it is not a sitemap and GSC flags it as one). |
 | `/llms.txt` | ✅ Generated | Plain-text index per llmstxt.org spec. Auto-generated from data, includes recommended operators, key pages, all services, all suburbs, all blog posts, sitemap. |
 | Favicon + Apple touch | ✅ `src/app/icon.png` + `src/app/apple-icon.png` | Auto-routed by Next.js to `/icon.png` and `/apple-icon.png`. |
 
@@ -24,7 +24,8 @@ Per-route additions:
 | `/services` (hub) | Organization, WebSite, BreadcrumbList |
 | `/services/[slug]` (18 pages) | Organization, WebSite, Service, BreadcrumbList, FAQPage |
 | `/townsville` (hub) | Organization, WebSite, BreadcrumbList |
-| `/townsville/[slug]` (14 pages) | Organization, WebSite, Place, BreadcrumbList, FAQPage |
+| `/townsville` (hub) | + ItemList of all 60 suburb pages |
+| `/townsville/[slug]` (60 pages) | Organization, WebSite, Place (with postcode), Service ("Tow truck <Suburb>", provider = recommended AutomotiveBusiness ×2), BreadcrumbList, FAQPage |
 | `/recommended` | Organization, WebSite, ItemList (recommended operators), BreadcrumbList |
 | `/compare` | Organization, WebSite, ItemList (recommended operators), BreadcrumbList |
 | `/blog` | Organization, WebSite, BreadcrumbList |
@@ -70,7 +71,7 @@ Primary: **tow truck Townsville**, **towing Townsville**.
 | Suburb page → neighbours | ✅ | "Nearby towing Townsville suburbs" / "Tow truck [Neighbour]" |
 | Suburb page → all-suburbs link | ✅ | "All towing Townsville suburbs →" |
 | All service page meta titles | ✅ | Pattern: "[Service] Townsville \| …" |
-| All suburb page meta titles | ✅ | Pattern: "[Suburb] Tow Truck \| 24/7 Towing — Townsville Towing Compare" |
+| All suburb page meta titles | ✅ | Pattern: "Tow Truck [Suburb] \| 24/7 Towing [Suburb], Townsville" (short form for long names) — `suburbTitle()` in `src/lib/seo.ts` |
 
 ## Internal-link integrity
 
@@ -102,3 +103,22 @@ grep -rhoE 'href="(/[^"]*)"' src/ | sort -u
 grep -oE '<loc>[^<]+</loc>' public/sitemap-0.xml | wc -l
 grep -c "^User-Agent:" .next/server/app/robots.txt.body
 ```
+
+
+## October 2026 audit — what changed
+
+**Primary keywords:** `towing Townsville`, `tow truck Townsville`. **Secondary:** `tow truck <suburb>`, `towing <suburb>`, `tow truck <postcode>`.
+
+1. **Brand = keyword = domain.** Site name changed from "Townsville Towing Compare" to **Towing Townsville** (matches the exact-match domain and the badge logo). Old name kept as `alternateName` in Organization/WebSite schema.
+2. **Home page** title `Towing Townsville | 24/7 Tow Truck Townsville — Call Now`; H1 starts with "Towing Townsville"; new ~600-word local guide section (cost, response time, which truck, suburb links) and a 3-step "how it works" block.
+3. **Suburb coverage 14 → 60.** 46 new suburb pages (CBD, inner city, central, southern, Thuringowa/west, Northern Beaches, northern coast/rural) each with unique 250–300 word intro, 5 local jobs, 5 FAQs, postcode and region. Files: `src/data/suburbs/*.ts`, aggregated in `src/data/suburbs.ts`.
+4. **Suburb template**: keyword H1 ("Tow Truck X — 24/7 Towing in X"), postcode, tap-to-call buttons, "how to get a tow truck in X", services-in-X links, neighbour + same-region links, Service + Place schema.
+5. **Internal linking**: every suburb now linked from the home page (by region), the suburbs hub, every service page and the site-wide footer; neighbour graph covers every page (no orphans).
+6. **Technical**: real 1200×630 JPG OG image (SVG isn't supported by social platforms), 192px square favicon (was a 1 MB non-square PNG), breadcrumb contrast fix, robots no longer lists llms.txt as a sitemap, Article publisher logo fixed, recommended operators marked up as `AutomotiveBusiness` with 24/7 hours.
+7. **UX**: tap-to-call buttons in header, hero and every suburb/service page; two-button sticky mobile call bar; mobile hamburger menu (there was no mobile nav); suburb/postcode type-ahead search.
+
+## Off-site actions still needed (can't be done in code)
+
+- Submit `https://towingtownsville.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools, then request indexing for `/` and `/townsville`.
+- Build local citations/backlinks: Townsville business directories, local news/community sites, and ask both recommended operators to link to their suburb/service pages.
+- Get reviews/mentions of "Towing Townsville" on social profiles and add them to `orgSchema().sameAs`.

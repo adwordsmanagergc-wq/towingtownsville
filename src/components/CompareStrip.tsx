@@ -37,7 +37,7 @@ export function CompareStrip() {
           </h2>
           <p className="text-slate-700 mt-3 text-[15px]">
             Anyone with a tow truck and a phone number can call themselves a towing company. We
-            don't recommend an operator until they've passed all six checks below.
+            don't recommend an operator until they've passed every check below.
           </p>
         </div>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

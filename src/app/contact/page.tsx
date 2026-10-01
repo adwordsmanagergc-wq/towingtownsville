@@ -6,9 +6,9 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Contact Townsville Towing Compare',
+  title: 'Contact Towing Townsville',
   description:
-    'Send us a note about Townsville Towing Compare — corrections, suggestions or operator submissions.',
+    'Send us a note about Towing Townsville — corrections, suggestions or operator submissions.',
   path: '/contact',
 });
 

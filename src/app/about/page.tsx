@@ -6,9 +6,9 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'About Townsville Towing Compare',
+  title: 'About Towing Townsville | Independent Tow Truck Townsville Guide',
   description:
-    "Townsville Towing Compare is an independent guide to Townsville's tow truck operators. Here is who we are and how we work.",
+    "Towing Townsville is an independent guide to Townsville's tow truck operators. Here is who we are and how we work.",
   path: '/about',
 });
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
       <section className="py-14 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 prose-towing">
           <p>
-            Townsville Towing Compare exists for one practical reason: when something goes
+            Towing Townsville exists for one practical reason: when something goes
             wrong on the road, most people grab their phone, type "tow truck near me" and ring
             the first number they see. Sometimes that works out. Often it does not. We built
             this site so locals (and visitors) can do five minutes of homework before something

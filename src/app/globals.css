@@ -11,7 +11,7 @@ html, body {
 }
 
 main {
-  @apply pb-20 md:pb-0;
+  @apply pb-0;
 }
 
 /* Improved focus visibility for keyboard users. */
@@ -23,6 +23,9 @@ main {
 
 .prose-towing :where(p) {
   @apply text-[15.5px] leading-relaxed text-slate-700;
+}
+.prose-towing :where(p + p, p + ul, ul + p, h3 + p) {
+  @apply mt-4;
 }
 .prose-towing :where(h2) {
   @apply font-display text-2xl md:text-3xl font-bold text-navy-900 mt-10 mb-4;

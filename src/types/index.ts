@@ -59,10 +59,21 @@ export type ServicePage = {
   related?: ServiceSlug[];
 };
 
+export type SuburbRegion =
+  | 'inner'
+  | 'central'
+  | 'south'
+  | 'west'
+  | 'northern-beaches'
+  | 'rural-north'
+  | 'island-highway';
+
 export type Suburb = {
   slug: string;
   name: string;
-  metaTitle: string;
+  postcode?: string;
+  region: SuburbRegion;
+  metaTitle?: string; // optional override; default is built in lib/seo
   metaDescription: string;
   intro: string;
   jobs: string[];

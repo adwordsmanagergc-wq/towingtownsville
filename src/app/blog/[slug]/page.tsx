@@ -23,7 +23,7 @@ export function generateMetadata({ params }: Params): Metadata {
   const p = getBlogPost(params.slug);
   if (!p) return {};
   return buildMetadata({
-    title: `${p.title} | Townsville Towing Compare`,
+    title: `${p.title} | Towing Townsville`,
     description: p.description,
     path: `/blog/${p.slug}`,
   });

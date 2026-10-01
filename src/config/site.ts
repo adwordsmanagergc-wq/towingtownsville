@@ -3,11 +3,14 @@
  * Change the brand name, domain, contact and nav from here.
  */
 export const site = {
-  name: 'Townsville Towing Compare',
-  shortName: 'TT Compare',
-  tagline: 'Compare and find the best tow truck in Townsville',
+  // Brand matches the exact-match domain and the badge logo. The old
+  // "Townsville Towing Compare" name is kept as an alternateName in schema.
+  name: 'Towing Townsville',
+  legacyName: 'Townsville Towing Compare',
+  shortName: 'Towing Townsville',
+  tagline: 'Find a tow truck in Townsville, fast',
   description:
-    'Compare every type of tow service in Townsville and see the operators we recommend for fast, properly insured, damage-free recoveries.',
+    'Towing Townsville — find a 24/7 tow truck anywhere in Townsville. Compare accident, breakdown, tilt tray, heavy and 4WD towing and call a recommended local operator.',
   domain: 'towingtownsville.com',
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
@@ -15,12 +18,12 @@ export const site = {
   locale: 'en-AU',
   region: 'Townsville, QLD, Australia',
   contactEmail: 'hello@towingtownsville.com',
-  defaultOgImage: '/og/default.svg',
+  defaultOgImage: '/og/default.jpg',
   themeColor: '#0B1B2B',
   nav: [
     { href: '/services', label: 'Services' },
-    { href: '/recommended', label: 'Recommended' },
     { href: '/townsville', label: 'Suburbs' },
+    { href: '/recommended', label: 'Recommended' },
     { href: '/compare', label: 'Compare' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },

@@ -18,8 +18,8 @@ const ensureLeadingSlash = (p: string) => (p.startsWith('/') ? p : `/${p}`);
 // Google does not use the keywords meta, but Bing, several AI search crawlers
 // (Perplexity, ChatGPT search), and a number of LLM training pipelines do.
 const baseKeywords = [
-  'tow truck Townsville',
   'towing Townsville',
+  'tow truck Townsville',
   'Townsville tow truck',
   'Townsville towing service',
   '24/7 towing Townsville',
@@ -55,7 +55,7 @@ export function buildMetadata(input: SeoInput): Metadata {
       siteName: site.name,
       title: ogTitle,
       description: ogDescription,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: site.name }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${site.name} — tow truck Townsville` }],
       locale: 'en_AU',
     },
     twitter: {
@@ -71,3 +71,12 @@ export function buildMetadata(input: SeoInput): Metadata {
 }
 
 export const canonicalUrl = (path: string) => `${site.url}${ensureLeadingSlash(path)}`;
+
+// "Tow Truck Aitkenvale | 24/7 Towing Aitkenvale, Townsville" — leads with the
+// highest-volume suburb query, repeats the suburb with "towing", and keeps
+// Townsville in the title. Long suburb names fall back to a shorter form so
+// the title isn't truncated in the SERP (~60 chars).
+export function suburbTitle(name: string) {
+  const full = `Tow Truck ${name} | 24/7 Towing ${name}, Townsville`;
+  return full.length <= 62 ? full : `Tow Truck ${name} | 24/7 Towing Townsville`;
+}
