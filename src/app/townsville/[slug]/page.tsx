@@ -11,7 +11,7 @@ import { Faq } from '@/components/Faq';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema, faqSchema, placeSchema, suburbServiceSchema } from '@/lib/schema';
 import { buildMetadata, suburbTitle } from '@/lib/seo';
-import { toParagraphs } from '@/lib/text';
+import { homeAnchor, toParagraphs } from '@/lib/text';
 
 type Params = { params: { slug: string } };
 
@@ -141,6 +141,11 @@ export default function SuburbPage({ params }: Params) {
                 {para}
               </p>
             ))}
+            <p className="text-[16.5px] leading-relaxed text-slate-700">
+              The same operators cover {suburb.name} and every other suburb, so our main{' '}
+              <Link href="/">{homeAnchor(suburb.slug)}</Link> page is the quickest way to compare
+              them and call.
+            </p>
 
             <h2>Common tow truck jobs in {suburb.name}</h2>
             <ul className="!list-none !pl-0 grid gap-2">

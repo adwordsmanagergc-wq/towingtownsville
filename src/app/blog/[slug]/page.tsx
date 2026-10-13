@@ -16,6 +16,7 @@ import {
 } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { renderMarkdown } from '@/lib/md';
+import { homeAnchor } from '@/lib/text';
 import { RecommendedCompaniesBlock } from '@/components/RecommendedCompaniesBlock';
 
 type Params = { params: { slug: string } };
@@ -37,7 +38,14 @@ export function generateMetadata({ params }: Params): Metadata {
 export default function BlogPostPage({ params }: Params) {
   const post = getBlogPost(params.slug);
   if (!post) notFound();
-  const html = renderMarkdown(post.body);
+  // Posts that don't already link the home page get one closing contextual
+  // link with a keyword anchor (home is the target for "towing Townsville").
+  const linksHome = post.body.includes('](/)');
+  const html =
+    renderMarkdown(post.body) +
+    (linksHome
+      ? ''
+      : `\n<p>Need a tow truck now? Our <a href="/">${homeAnchor(post.slug)}</a> guide lists the two local operators we recommend, both on call 24/7 across every suburb.</p>`);
   const related = allBlogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const suburbCount = suburbs.length;
 

@@ -35,7 +35,11 @@ export default function ServicesHubPage() {
           </h1>
           <p className="mt-4 text-slate-100/80 max-w-2xl">
             From a flat tyre on the Ring Road to a prime mover on the Bruce Highway — pick the
-            service closest to your situation.
+            service closest to your situation, or start with our{' '}
+            <Link href="/" className="font-semibold text-white underline underline-offset-4 hover:text-hivis-400">
+              towing Townsville
+            </Link>{' '}
+            guide if you just need a truck now.
           </p>
           <CallButtons className="mt-7" />
         </div>

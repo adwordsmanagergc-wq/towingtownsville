@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { site } from '@/config/site';
 
 type Item = { name: string; href: string };
 
@@ -17,7 +18,7 @@ export function Breadcrumbs({ items }: { items: Item[] }) {
                 </span>
               ) : (
                 <Link href={it.href} className="hover:text-hivis-400 underline underline-offset-2">
-                  {it.name}
+                  {it.href === '/' ? site.name : it.name}
                 </Link>
               )}
               {!last && <ChevronRight className="h-3.5 w-3.5 text-slate-200/50" aria-hidden />}

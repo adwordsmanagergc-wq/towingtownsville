@@ -34,7 +34,16 @@ export default function RecommendedPage() {
         crumbs={[{ name: 'Home', href: '/' }, { name: 'Recommended', href: '/recommended' }]}
         eyebrow="Recommended operators"
         title="The Townsville towing companies we recommend most."
-        intro="Two operators, two very different strengths. Here is exactly why each made the list — and which one to call for your job."
+        intro={
+          <>
+            Two operators, two very different strengths. Here is exactly why each made the list
+            and which one to call for your job. New here? Start with our{' '}
+            <Link href="/" className="font-semibold text-white underline underline-offset-4 hover:text-hivis-400">
+              Townsville tow truck
+            </Link>{' '}
+            guide.
+          </>
+        }
       >
         <nav aria-label="Operators" className="mt-7 flex flex-wrap gap-2">
           {companies.map((c, i) => (

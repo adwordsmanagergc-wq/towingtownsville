@@ -32,7 +32,16 @@ export default function BlogIndex() {
         crumbs={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }]}
         eyebrow="Guides & advice"
         title="Townsville towing — guides & advice."
-        intro="Plain-English guides to costs, equipment choices, recovery scenarios and insurance. Written for Townsville drivers."
+        intro={
+          <>
+            Plain-English guides to costs, equipment choices, recovery scenarios and insurance,
+            written for Townsville drivers. Stuck right now? Go straight to our{' '}
+            <Link href="/" className="font-semibold text-white underline underline-offset-4 hover:text-hivis-400">
+              tow truck Townsville
+            </Link>{' '}
+            page.
+          </>
+        }
       />
 
       <section className="py-12 md:py-16 bg-slate-50">

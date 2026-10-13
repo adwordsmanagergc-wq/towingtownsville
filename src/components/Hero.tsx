@@ -39,9 +39,9 @@ export function Hero() {
               Towing Townsville: <span className="text-hivis-400">a tow truck to you, fast.</span>
             </h1>
             <p className="mt-5 text-lg text-slate-100/90 max-w-2xl leading-relaxed">
-              Broken down, crashed or bogged? Call a recommended 24/7 tow truck in Townsville
-              direct — accident, breakdown, tilt tray, heavy and 4WD recovery across every suburb
-              from the CBD to the Northern Beaches.
+              Towing Townsville drivers can trust, 24/7. Broken down, crashed or bogged? Call a
+              recommended tow truck in Townsville direct for accident, breakdown, tilt tray, heavy
+              and 4WD recovery in every suburb from the CBD to the Northern Beaches.
             </p>
 
             <CallButtons size="lg" className="mt-7" />

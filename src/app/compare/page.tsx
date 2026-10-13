@@ -90,8 +90,10 @@ export default function ComparePage() {
             </p>
             <p>
               We score every Townsville operator we research against the same six criteria. The
-              two companies on our home page — Kwiktow NQ and ABC Towing Services — are the
-              operators we currently recommend most. Here is exactly how we got there.
+              two companies on our{' '}
+              <Link href="/">towing in Townsville</Link> home page, Kwiktow NQ and ABC Towing
+              Services, are the operators we currently recommend most. Here is exactly how we got
+              there.
             </p>
           </div>
 

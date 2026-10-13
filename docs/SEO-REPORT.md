@@ -122,3 +122,13 @@ grep -c "^User-Agent:" .next/server/app/robots.txt.body
 - Submit `https://towingtownsville.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools, then request indexing for `/` and `/townsville`.
 - Build local citations/backlinks: Townsville business directories, local news/community sites, and ask both recommended operators to link to their suburb/service pages.
 - Get reviews/mentions of "Towing Townsville" on social profiles and add them to `orgSchema().sameAs`.
+
+## Internal linking pass (October 2026)
+
+Target page for both "towing Townsville" and "tow truck Townsville": the home page (close-variant keywords, exact-match domain, holds the site's external authority).
+
+- **Legacy URL redirects** (`next.config.mjs`): old pages from the previous site (`/long-distance-towing/`, `/vehicle-recovery/`, `/towing-cost-in-townsville/`, `/prepare-car-for-rainy-season-townsville/` and similar) were still indexed and ranking but returned 404. They now permanently redirect to the closest current page.
+- **Contextual keyword links to `/`** on every service, suburb, blog and hub page, anchors rotated via `homeAnchor()` in `src/lib/text.ts` (tow truck Townsville / towing Townsville / Townsville tow truck / towing in Townsville / tow truck in Townsville).
+- **Breadcrumb root** label is now "Towing Townsville" instead of "Home" (visible and in BreadcrumbList schema).
+- **Suburbs hub** title/H1 no longer lead with "tow truck Townsville", so it stops competing with the home page; it links to home instead.
+- Home hero first sentence now opens with "Towing Townsville".

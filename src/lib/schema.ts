@@ -52,7 +52,7 @@ export const breadcrumbSchema = (
   itemListElement: items.map((it, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    name: it.name,
+    name: it.path === '/' ? site.name : it.name,
     item: `${site.url}${it.path}`,
   })),
 });
@@ -153,6 +153,9 @@ export const articleSchema = (post: BlogPost) => ({
   '@type': 'Article',
   headline: post.title,
   description: post.description,
+  // Google's Article rich result requires an image; the posts have no hero
+  // images, so use the site's 1200x630 social image.
+  image: [`${site.url}${site.defaultOgImage}`],
   datePublished: post.date,
   dateModified: post.date,
   author:
