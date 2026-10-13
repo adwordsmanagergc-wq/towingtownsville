@@ -560,7 +560,7 @@ People make bad decisions in shock. They sign things they have not read, they ac
 
 ## Who to call
 
-If you want a single number to ring after a Townsville crash, our recommended operators are listed on the [home page](/). For accident-specific information by service category, see the [accident towing page](/services/accident-towing).`,
+If you want a single number to ring after a Townsville crash, our recommended operators are listed on the [towing Townsville home page](/). For accident-specific information by service category, see the [accident towing page](/services/accident-towing).`,
   },
   {
     slug: 'tilt-tray-vs-flatbed-vs-hook-and-chain',

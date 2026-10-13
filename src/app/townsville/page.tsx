@@ -12,7 +12,7 @@ import { site } from '@/config/site';
 import { RecommendedCompaniesBlock } from '@/components/RecommendedCompaniesBlock';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Tow Truck Townsville Suburbs | Towing in Every Townsville Suburb',
+  title: 'Townsville Suburbs We Cover | Local Tow Truck Guides by Suburb',
   description: `Towing Townsville suburb by suburb — 24/7 tow trucks for all ${suburbs.length} areas from the CBD and Aitkenvale to Kirwan, Douglas and the Northern Beaches.`,
   path: '/townsville',
   extraKeywords: suburbs.slice(0, 20).map((s) => `tow truck ${s.name}`),
@@ -51,11 +51,15 @@ export default function TownsvilleHubPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-12 md:py-16">
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Suburbs', href: '/townsville' }]} />
           <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl">
-            Tow truck Townsville — every suburb covered.
+            Towing in every Townsville suburb.
           </h1>
           <p className="mt-4 text-lg text-slate-100/85 max-w-2xl">
             The same recommended 24/7 operators service all {suburbs.length} areas below. Search your
-            suburb or postcode for local towing advice, typical jobs and FAQs — or just call.
+            suburb or postcode for local advice, or go back to the main{' '}
+            <Link href="/" className="font-semibold text-white underline underline-offset-4 hover:text-hivis-400">
+              tow truck Townsville
+            </Link>{' '}
+            guide to compare operators and call.
           </p>
           <SuburbFinder suburbs={finderItems} className="mt-7" />
           <CallButtons className="mt-6" />

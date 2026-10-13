@@ -66,8 +66,9 @@ export default function AboutPage() {
           </p>
           <h2>Who we recommend</h2>
           <p>
-            Right now we recommend two Townsville operators — see the{' '}
-            <Link href="/recommended">recommended page</Link>. The list is short by design: we
+            Right now we recommend two Townsville operators. See the{' '}
+            <Link href="/recommended">recommended page</Link>, or our main{' '}
+            <Link href="/">tow truck in Townsville</Link> guide to call one now. The list is short by design: we
             would rather recommend two operators we trust than ten we do not.
           </p>
           <h2>Get in touch</h2>

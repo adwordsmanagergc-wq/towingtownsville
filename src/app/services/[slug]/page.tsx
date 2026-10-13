@@ -11,7 +11,7 @@ import { Faq } from '@/components/Faq';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema, faqSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
-import { toParagraphs } from '@/lib/text';
+import { homeAnchor, toParagraphs } from '@/lib/text';
 
 type Params = { params: { slug: string } };
 
@@ -79,6 +79,11 @@ export default function ServicePage({ params }: Params) {
               {para}
             </p>
           ))}
+          <p className="text-[16.5px] leading-relaxed text-slate-700">
+            Not sure this is the right service? Our{' '}
+            <Link href="/">{homeAnchor(service.slug)}</Link> guide compares every option and
+            lists the two local operators we recommend, both on call 24/7.
+          </p>
 
           <h2>What's included</h2>
           <ul>
